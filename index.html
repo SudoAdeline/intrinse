@@ -29,6 +29,18 @@ a{color:inherit;text-decoration:none}
 
 .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
 
+/* ── smooth section transitions ── */
+section{position:relative;padding:clamp(90px,13vh,150px) 0}
+section::before{content:"";position:absolute;top:-80px;left:0;right:0;height:160px;pointer-events:none;z-index:1}
+
+/* ── scroll reveal ── */
+.sr{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.sr.vis{opacity:1;transform:translateY(0)}
+.sr-d1{transition-delay:.12s}
+.sr-d2{transition-delay:.24s}
+.sr-d3{transition-delay:.36s}
+.sr-d4{transition-delay:.48s}
+
 /* ── nav ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
 .nav-in{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px);height:64px;display:flex;align-items:center;justify-content:space-between}
@@ -38,11 +50,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 .bag{width:19px;height:19px;stroke:var(--ink);stroke-width:1.1;fill:none}
 
 /* ── section frame ── */
-section{position:relative;padding:clamp(90px,13vh,150px) 0}
 .frame{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 .foot{position:absolute;bottom:34px;left:clamp(20px,5vw,64px);right:clamp(20px,5vw,64px);display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.3em;color:var(--ink-soft);border-top:1px solid var(--hair);padding-top:18px}
 .dots{display:flex;gap:11px;align-items:center}
-.dot{width:7px;height:7px;border-radius:50%;border:1px solid var(--ink-soft)}
+.dot{width:7px;height:7px;border-radius:50%;border:1px solid var(--ink-soft);transition:all .6s}
 .dot.on{background:var(--energy);border-color:var(--energy)}
 
 .eyebrow{font-size:10px;letter-spacing:.34em;color:var(--ink-soft);margin-bottom:26px}
@@ -50,14 +61,15 @@ section{position:relative;padding:clamp(90px,13vh,150px) 0}
 
 /* ── hero ── */
 #hero{background:linear-gradient(150deg,#cfccc5 0%,#c4c1ba 50%,#bfbcb5 100%);min-height:100vh}
-.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;transition:opacity 1.2s}
 .g-e{width:46vw;height:46vw;background:radial-gradient(circle,rgba(212,86,42,.42),transparent 68%);left:-8vw;bottom:8vh}
-.g-f{width:34vw;height:34vw;background:radial-gradient(circle,rgba(74,127,140,.32),transparent 68%);left:46vw;bottom:18vh}
-.g-b{width:34vw;height:34vw;background:radial-gradient(circle,rgba(201,168,135,.34),transparent 68%);right:2vw;bottom:14vh}
+.g-f{width:34vw;height:34vw;background:radial-gradient(circle,rgba(74,127,140,.12),transparent 68%);left:46vw;bottom:18vh;opacity:.3}
+.g-b{width:34vw;height:34vw;background:radial-gradient(circle,rgba(201,168,135,.12),transparent 68%);right:2vw;bottom:14vh;opacity:.3}
 .hero-c{position:relative;z-index:2}
 h1.states{display:flex;flex-wrap:wrap;align-items:baseline;gap:clamp(24px,6vw,78px);font-weight:200;font-size:clamp(34px,6vw,66px);letter-spacing:.14em;line-height:1.1}
 h1.states .lead{color:var(--ink)}
-h1.states .dim{font-size:clamp(15px,2vw,22px);letter-spacing:.24em;color:var(--ink-soft);opacity:.72}
+h1.states .dim{font-size:clamp(15px,2vw,22px);letter-spacing:.24em;color:var(--ink-soft);opacity:.28}
+h1.states .dim .locked-label{font-size:8px;letter-spacing:.2em;display:block;margin-top:6px;opacity:.5}
 .sub{font-size:clamp(19px,2.4vw,26px);font-weight:300;margin-top:30px}
 .sub-de{font-size:14px;color:var(--ink-soft);margin-top:6px;letter-spacing:.02em}
 .more{display:inline-flex;align-items:center;gap:14px;margin-top:44px;font-size:10px;letter-spacing:.3em;border-bottom:1px solid var(--ink);padding-bottom:7px;transition:gap .3s}
@@ -65,9 +77,10 @@ h1.states .dim{font-size:clamp(15px,2vw,22px);letter-spacing:.24em;color:var(--i
 
 /* ── three states ── */
 #states{background:linear-gradient(180deg,#c4c1ba,#bcb9b2)}
+#states::before{background:linear-gradient(180deg,#bfbcb5,#c4c1ba)}
 h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-height:1.32}
 .state-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(56px,9vh,110px);position:relative;z-index:2}
-.st{padding:0 clamp(14px,2.6vw,40px);border-left:1px solid var(--hair)}
+.st{padding:0 clamp(14px,2.6vw,40px);border-left:1px solid var(--hair);transition:opacity .8s}
 .st:first-child{border-left:none;padding-left:0}
 .st-n{font-size:11px;letter-spacing:.3em;margin-bottom:26px}
 .st-t{font-size:clamp(17px,2.3vw,25px);letter-spacing:.2em;font-weight:300}
@@ -77,28 +90,62 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .st-2 .st-n,.st-2 .st-t{color:var(--focus)}
 .st-3 .st-n,.st-3 .st-t{color:#8d7c68}
 
+/* locked states */
+.st.locked{opacity:.35}
+.st.locked .st-d{filter:blur(2px)}
+.st-soon{display:none;font-size:9px;letter-spacing:.28em;color:var(--ink-soft);margin-top:18px;opacity:.7}
+.st.locked .st-soon{display:block}
+
 /* ── object ── */
 #object{background:linear-gradient(120deg,#cbc8c1,#c0bdb6)}
+#object::before{background:linear-gradient(180deg,#bcb9b2,#cbc8c1)}
 .obj{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
 .obj h2.big{font-size:clamp(40px,6.6vw,80px);letter-spacing:-.02em;font-weight:300;line-height:1.02}
 .obj p{font-size:14.5px;color:var(--ink-soft);line-height:1.95}
 .stack{margin-top:30px;font-size:14.5px;line-height:2.1}
-.obj-img{filter:drop-shadow(0 40px 70px rgba(0,0,0,.22))}
+.obj-img{filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1));transition:filter 1.4s cubic-bezier(.16,1,.3,1);max-width:400px;margin:0 auto}
+
+/* product glow — "light goes on" */
+.obj-img.lit{filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1)) drop-shadow(0 0 50px rgba(212,86,42,.15))}
 
 /* ── choose your state ── */
 #choose{padding:0;min-height:auto}
+#choose::before{display:none}
 .choose-t{font-size:clamp(46px,9.4vw,124px);font-weight:200;line-height:.95;letter-spacing:-.015em;padding:clamp(50px,9vh,100px) clamp(20px,5vw,64px) clamp(30px,5vh,54px);max-width:1240px;margin:0 auto}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);min-height:56vh}
-.card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:0 20px 62px;text-align:center;overflow:hidden;transition:flex .4s}
-.card::before{content:"";position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;min-height:56vh}
+.card{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 20px;text-align:center;overflow:hidden;transition:flex .6s cubic-bezier(.25,.8,.25,1)}
+.card::before{content:"";position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.7,.3,1),filter .6s,box-shadow .6s}
+.card::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .8s;pointer-events:none;z-index:1}
 .c1::before{background:linear-gradient(180deg,#a9a49c 0%,#c47a4e 55%,#8e5c3c 100%)}
 .c2::before{background:linear-gradient(180deg,#a3a29e 0%,#5e7d86 55%,#3f5a63 100%)}
 .c3::before{background:linear-gradient(180deg,#b0aca3 0%,#c3b49c 55%,#9a8d78 100%)}
-.card:hover::before{transform:scale(1.07)}
-.card>*{position:relative;z-index:2;color:#f2efe9}
+
+/* active card hover — expand + glow */
+.card:not(.locked):hover{flex:1.5}
+.card:not(.locked):hover::before{transform:scale(1.06)}
+.card:not(.locked)::after{background:radial-gradient(ellipse at 50% 70%,rgba(212,86,42,.5),rgba(212,86,42,.2) 40%,transparent 70%)}
+.card:not(.locked):hover::after{opacity:1}
+.card:not(.locked){box-shadow:0 0 0 rgba(212,86,42,0);transition:flex .6s cubic-bezier(.25,.8,.25,1),box-shadow .6s}
+.card:not(.locked):hover{box-shadow:0 0 120px rgba(212,86,42,.35),0 0 200px rgba(212,86,42,.15)}
+
+.card>*{position:relative;z-index:2;color:#f2efe9;transition:transform .6s cubic-bezier(.25,.8,.25,1),text-shadow .6s,letter-spacing .6s}
+.card:not(.locked):hover>*{transform:scale(1.12)}
 .c-name{font-size:clamp(19px,2.7vw,32px);letter-spacing:.2em;font-weight:300}
+.card:not(.locked):hover .c-name{text-shadow:0 0 40px rgba(255,255,255,.5),0 0 80px rgba(212,86,42,.3);letter-spacing:.28em}
 .c-sub{font-size:12.5px;margin-top:16px;opacity:.9}
-.c-line{width:26px;height:1px;background:rgba(255,255,255,.7);margin:24px auto 0}
+.card:not(.locked):hover .c-sub{text-shadow:0 0 20px rgba(255,255,255,.3)}
+.c-line{width:26px;height:1px;background:rgba(255,255,255,.7);margin:24px auto 0;transition:width .6s,opacity .6s,box-shadow .6s}
+.card:not(.locked):hover .c-line{width:60px;opacity:1;box-shadow:0 0 12px rgba(255,255,255,.5)}
+
+/* locked cards — default is muted color, hover fades to ash grey + COMING SOON */
+.card.locked{cursor:default;pointer-events:auto}
+.card.locked::before{filter:grayscale(.5) brightness(.75);transition:filter .8s}
+.card.locked .c-name,.card.locked .c-sub{transition:opacity .8s}
+.card.locked:hover::before{filter:grayscale(1) brightness(.5)}
+.card.locked:hover .c-name,.card.locked:hover .c-sub{opacity:0}
+.c-soon{font-size:11px;letter-spacing:.3em;opacity:0;transition:opacity .8s;position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.card.locked:hover .c-soon{opacity:1}
+.card.locked .c-line{display:none}
 
 /* ── shop ── */
 #shop{background:linear-gradient(140deg,#d2cfc8,#c2bfb8)}
@@ -114,6 +161,8 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .variants{display:flex;gap:10px;margin:30px 0 6px}
 .vb{flex:1;padding:13px 8px;border:1px solid var(--hair);background:transparent;font-family:var(--f);font-size:10.5px;letter-spacing:.24em;color:var(--ink-soft);cursor:pointer;transition:.25s}
 .vb[aria-selected="true"]{border-color:var(--ink);color:var(--ink)}
+.vb.locked{opacity:.3;cursor:default;position:relative}
+.vb.locked::after{content:"SOON";font-size:7px;letter-spacing:.15em;position:absolute;bottom:3px;right:6px;opacity:.6}
 .cart{margin-top:32px}
 .cart button, .shopify-buy__btn{
   all:unset;box-sizing:border-box;display:flex!important;align-items:center;justify-content:space-between;
@@ -125,8 +174,18 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .cart button:hover span.arw{transform:translateX(9px)}
 #shopify-status{font-size:11px;color:var(--ink-soft);margin-top:14px;min-height:16px;letter-spacing:.05em}
 
+/* product info — only ENERGY */
+.p-info{font-size:12px;color:var(--ink-soft);line-height:1.9;margin-top:38px;border-top:1px solid var(--hair);padding-top:22px;max-width:34ch}
+.p-info h4{font-size:9px;letter-spacing:.24em;color:var(--ink);font-weight:400;margin-bottom:10px}
+.p-info ul{list-style:none;margin:0}
+.p-info li{padding-left:14px;position:relative;margin-bottom:4px}
+.p-info li::before{content:"—";position:absolute;left:0;opacity:.35;font-size:10px}
+.p-note{font-size:10px;color:var(--ink-soft);opacity:.6;margin-top:16px;line-height:1.7;max-width:34ch}
+.p-legal{font-size:10px;color:var(--ink-soft);opacity:.45;line-height:1.7;margin-top:60px;text-align:center;max-width:50ch;margin-left:auto;margin-right:auto}
+
 /* ── knowledge ── */
 #knowledge{background:var(--paper)}
+#knowledge::before{background:linear-gradient(180deg,#c2bfb8,var(--paper))}
 .k-title{font-size:clamp(42px,7.4vw,88px);font-weight:300;letter-spacing:-.02em;line-height:1}
 .k-list{font-size:15px;line-height:2.15;margin-top:34px;color:var(--ink)}
 .k-rows{margin-top:clamp(46px,7vh,80px);display:flex;flex-direction:column;gap:14px}
@@ -149,6 +208,7 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 
 /* ── closing ── */
 #reveal{background:linear-gradient(160deg,#c8c5be,#bab7b0);text-align:center}
+#reveal::before{background:linear-gradient(180deg,var(--paper),#c8c5be)}
 .rv{font-size:clamp(24px,4.2vw,50px);font-weight:200;letter-spacing:.16em}
 .rv-p{font-size:14.5px;color:var(--ink-soft);line-height:2;margin-top:30px;max-width:46ch;margin-left:auto;margin-right:auto}
 
@@ -181,7 +241,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
     <a href="#hero" class="logo">INTRINSE</a>
     <div class="nav-r">
       <a href="#shop">SHOP</a>
-      <svg class="bag" viewBox="0 0 24 24"><path d="M4 7h16l-1.2 14H5.2L4 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+      <a href="#shop" aria-label="Shop"><svg class="bag" viewBox="0 0 24 24"><path d="M4 7h16l-1.2 14H5.2L4 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></a>
     </div>
   </div>
 </nav>
@@ -190,138 +250,125 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
 <section id="hero" class="frame">
   <div class="glow g-e"></div><div class="glow g-f"></div><div class="glow g-b"></div>
   <div class="wrap hero-c">
-    <div class="eyebrow">THE FIRST STATE</div>
-    <h1 class="states">
+    <div class="eyebrow sr">THE FIRST STATE</div>
+    <h1 class="states sr sr-d1">
       <span class="lead">ENERGY.</span>
-      <span class="dim">FOCUS.</span>
-      <span class="dim">BALANCE.</span>
+      <span class="dim">FOCUS.<span class="locked-label">COMING SOON</span></span>
+      <span class="dim">BALANCE.<span class="locked-label">COMING SOON</span></span>
     </h1>
-    <div class="sub">Calm activation.</div>
-    <div class="rule"></div>
-    <div class="sub-de">Ruhige Aktivierung für anhaltende Energie.</div>
-    <a href="#states" class="more">MEHR ERFAHREN <span>&rarr;</span></a>
-  </div>
-  <div class="foot">
-    <span>02</span>
-    <div class="dots"><span>THE THREE STATES</span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="sub sr sr-d2">Calm activation.</div>
+    <div class="rule sr sr-d2"></div>
+    <div class="sub-de sr sr-d3">Ruhige Aktivierung für anhaltende Energie.</div>
+    <a href="#states" class="more sr sr-d4">MEHR ERFAHREN <span>&rarr;</span></a>
   </div>
 </section>
 
 <!-- THREE STATES -->
 <section id="states" class="frame">
   <div class="wrap">
-    <div class="eyebrow">THE SYSTEM</div>
-    <h2>THREE STATES.<br>ONE PHYSIOLOGICAL SYSTEM.</h2>
-    <div class="rule"></div>
-    <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.9">Aktivierung. Konzentration. Regeneration.<br>Drei Zustände.<br>Ein System.</p>
+    <div class="eyebrow sr">THE SYSTEM</div>
+    <h2 class="sr sr-d1">THREE STATES.<br>ONE PHYSIOLOGICAL SYSTEM.</h2>
+    <div class="rule sr sr-d1"></div>
+    <p class="sr sr-d2" style="font-size:14.5px;color:var(--ink-soft);line-height:1.9">Aktivierung. Konzentration. Regeneration.<br>Drei Zustände.<br>Ein System.</p>
 
     <div class="state-grid">
-      <div class="st st-1">
+      <div class="st st-1 sr sr-d1">
         <div class="st-n">01</div>
         <div class="st-t">ENERGY.</div>
         <div class="rule" style="margin:22px 0"></div>
         <div class="st-d"><em>Calm activation.</em><br>Gerichtete Energie für stabile Leistungsfähigkeit.</div>
       </div>
-      <div class="st st-2">
+      <div class="st st-2 locked sr sr-d2">
         <div class="st-n">02</div>
         <div class="st-t">FOCUS.</div>
         <div class="rule" style="margin:22px 0"></div>
         <div class="st-d"><em>Mental precision.</em><br>Ruhige Klarheit für kontrollierte Aufmerksamkeit.</div>
+        <div class="st-soon">COMING SOON</div>
       </div>
-      <div class="st st-3">
+      <div class="st st-3 locked sr sr-d3">
         <div class="st-n">03</div>
         <div class="st-t">BALANCE.</div>
         <div class="rule" style="margin:22px 0"></div>
         <div class="st-d"><em>Regeneration.</em><br>Stabilisierung für strukturelle Belastbarkeit.</div>
+        <div class="st-soon">COMING SOON</div>
       </div>
     </div>
-  </div>
-  <div class="foot">
-    <span>03</span>
-    <div class="dots"><span>THE THREE STATES</span><span class="dot"></span><span class="dot on"></span><span class="dot"></span></div>
   </div>
 </section>
 
 <!-- OBJECT -->
 <section id="object" class="frame">
   <div class="wrap">
-    <div class="eyebrow">05&nbsp;&nbsp;&nbsp;&nbsp;THE OBJECT</div>
+    <div class="eyebrow sr">THE OBJECT</div>
     <div class="obj">
       <div>
-        <h2 class="big">Designed<br>to remain.</h2>
-        <div class="rule"></div>
-        <p>INTRINSE wurde entwickelt,<br>um Teil bewusster Routinen zu werden.</p>
-        <div class="stack">Form.<br>Inhalt.<br>Verständnis.</div>
+        <h2 class="big sr sr-d1">Designed<br>to remain.</h2>
+        <div class="rule sr sr-d2"></div>
+        <p class="sr sr-d2">INTRINSE wurde entwickelt,<br>um Teil bewusster Routinen zu werden.</p>
+        <div class="stack sr sr-d3">Form.<br>Inhalt.<br>Verständnis.</div>
       </div>
-      <img class="obj-img" src="img/canister-energy.jpg" alt="INTRINSE ENERGY Protein Blend Dose">
+      <img class="obj-img sr sr-d2" src="img/canister-energy.png" alt="INTRINSE ENERGY Protein Blend Dose">
     </div>
-  </div>
-  <div class="foot">
-    <span>05</span>
-    <div class="dots"><span>THE OBJECT</span><span class="dot"></span><span class="dot"></span><span class="dot on"></span></div>
   </div>
 </section>
 
 <!-- CHOOSE YOUR STATE -->
 <section id="choose">
-  <h2 class="choose-t">CHOOSE<br>YOUR<br>STATE.</h2>
+  <h2 class="choose-t sr">CHOOSE<br>YOUR<br>STATE.</h2>
   <div class="cards">
     <a href="#shop" class="card c1" data-state="ENERGY">
       <div class="c-name">ENERGY.</div><div class="c-sub">Calm activation.</div><div class="c-line"></div>
     </a>
-    <a href="#shop" class="card c2" data-state="FOCUS">
-      <div class="c-name">FOCUS.</div><div class="c-sub">Mental precision.</div><div class="c-line"></div>
-    </a>
-    <a href="#shop" class="card c3" data-state="BALANCE">
-      <div class="c-name">BALANCE.</div><div class="c-sub">Regeneration.</div><div class="c-line"></div>
-    </a>
+    <div class="card c2 locked">
+      <div class="c-name">FOCUS.</div><div class="c-sub">Mental precision.</div>
+      <div class="c-soon">COMING SOON</div>
+    </div>
+    <div class="card c3 locked">
+      <div class="c-name">BALANCE.</div><div class="c-sub">Regeneration.</div>
+      <div class="c-soon">COMING SOON</div>
+    </div>
   </div>
 </section>
 
-<!-- SHOP -->
+<!-- SHOP — ENERGY only -->
 <section id="shop" class="frame">
   <div class="wrap">
-    <a href="#choose" class="back">&larr; CHOOSE YOUR STATE</a>
+    <a href="#choose" class="back sr">&larr; CHOOSE YOUR STATE</a>
     <div class="shop-g">
       <div>
-        <div class="p-name" id="pName">ENERGY.</div>
-        <div class="p-tag" id="pTag">Calm activation.</div>
-        <p class="p-desc" id="pDesc">Ruhige Aktivierung für anhaltende Energie – ohne Auf und Ab.</p>
-        <div class="rule"></div>
+        <div class="p-name sr sr-d1">ENERGY.</div>
+        <div class="p-tag sr sr-d1">Calm activation.</div>
+        <p class="p-desc sr sr-d2">Pflanzliches Proteinpulver mit Guarana und L-Theanin.</p>
+        <div class="rule sr sr-d2"></div>
 
-        <div class="variants" role="tablist">
-          <button class="vb" role="tab" aria-selected="true" data-v="ENERGY">ENERGY</button>
-          <button class="vb" role="tab" aria-selected="false" data-v="FOCUS">FOCUS</button>
-          <button class="vb" role="tab" aria-selected="false" data-v="BALANCE">BALANCE</button>
-        </div>
+        <div class="p-size sr sr-d2">500 g</div>
+        <div class="p-price sr sr-d2">39 &euro;</div>
+        <div class="p-vat sr sr-d2">inkl. MwSt. zzgl. Versand</div>
 
-        <div class="p-size">500 g</div>
-        <div class="p-price">39 €</div>
-        <div class="p-vat">inkl. MwSt. zzgl. Versand</div>
-
-        <div class="cart">
+        <div class="cart sr sr-d3">
           <div id="shopify-buy-mount"></div>
           <button id="fallbackBtn" type="button">ADD TO CART <span class="arw">&rarr;</span></button>
           <div id="shopify-status"></div>
         </div>
 
-        <div class="p-ship"><span>—</span><span>Ships within 1–3 business days.</span></div>
+        <div class="p-ship sr sr-d3"><span>—</span><span>Ships within 1–3 business days.</span></div>
       </div>
-      <img src="img/canister-alt.jpg" alt="INTRINSE Dose Detail" style="filter:drop-shadow(0 30px 60px rgba(0,0,0,.2))">
+      <img class="sr sr-d2" src="img/canister-alt.png" alt="INTRINSE ENERGY Dose" style="filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1));max-width:400px;margin:0 auto">
     </div>
+    <div class="p-legal">Nahrungsergänzungsmittel. Kein Ersatz für eine ausgewogene Ernährung und gesunde Lebensweise. Pflanzliches Proteinpulver (Erbse &amp; Reis) mit Guarana und L-Theanin. 500 g. Vegan.</div>
   </div>
 </section>
 
 <!-- KNOWLEDGE -->
 <section id="knowledge">
   <div class="wrap">
-    <div class="eyebrow">KNOWLEDGE</div>
-    <div class="k-title">KNOWLEDGE.</div>
-    <div class="rule"></div>
-    <div class="k-list">Foundation.<br>States.<br>Ingredients.<br>Connections.</div>
+    <div class="eyebrow sr">KNOWLEDGE</div>
+    <div class="k-title sr sr-d1">KNOWLEDGE.</div>
+    <div class="rule sr sr-d1"></div>
+    <div class="k-list sr sr-d2">Foundation.<br>States.<br>Ingredients.<br>Connections.</div>
 
     <div class="k-rows">
-      <div class="k-row" tabindex="0">
+      <div class="k-row sr sr-d1" tabindex="0">
         <div class="k-num">01</div>
         <div>
           <div class="k-h">FOUNDATION</div><div class="k-line"></div>
@@ -348,7 +395,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
         </div></div>
       </div>
 
-      <div class="k-row" tabindex="0">
+      <div class="k-row sr sr-d2" tabindex="0">
         <div class="k-num">02</div>
         <div>
           <div class="k-h">STATES</div><div class="k-line"></div>
@@ -369,7 +416,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
         </div></div>
       </div>
 
-      <div class="k-row" tabindex="0">
+      <div class="k-row sr sr-d3" tabindex="0">
         <div class="k-num">03</div>
         <div>
           <div class="k-h">INGREDIENTS</div><div class="k-line"></div>
@@ -392,7 +439,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
         </div></div>
       </div>
 
-      <div class="k-row" tabindex="0">
+      <div class="k-row sr sr-d4" tabindex="0">
         <div class="k-num">04</div>
         <div>
           <div class="k-h">CONNECTIONS</div><div class="k-line"></div>
@@ -414,17 +461,13 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
       </div>
     </div>
   </div>
-  <div class="foot" style="position:static;margin-top:70px">
-    <span>04</span>
-    <div class="dots"><span>THE KNOWLEDGE WORLD</span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on" style="background:var(--ink);border-color:var(--ink)"></span></div>
-  </div>
 </section>
 
 <!-- REVEAL -->
 <section id="reveal">
   <div class="wrap">
-    <div class="rv">REVEAL WHAT IS WITHIN.</div>
-    <p class="rv-p">Wir glauben, dass Entwicklung kein Ziel ist. Sie ist ein Prozess. Ein Prozess aus Aufmerksamkeit, Anpassung, Regeneration und bewussten Entscheidungen.</p>
+    <div class="rv sr">REVEAL WHAT IS WITHIN.</div>
+    <p class="rv-p sr sr-d1">Wir glauben, dass Entwicklung kein Ziel ist. Sie ist ein Prozess. Ein Prozess aus Aufmerksamkeit, Anpassung, Regeneration und bewussten Entscheidungen.</p>
   </div>
 </section>
 
@@ -432,66 +475,66 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   <div class="wrap f-g">
     <div class="f-logo">INTRINSE</div>
     <div class="f-links">
-      <a href="#shop">Shop</a><a href="#knowledge">Knowledge</a><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Kontakt</a>
+      <a href="#shop">Shop</a><a href="#knowledge">Knowledge</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
     </div>
-    <div>© 2026 INTRINSE — Nothing more, nothing less.</div>
+    <div>&copy; 2026 INTRINSE — Nothing more, nothing less.</div>
   </div>
 </footer>
 
 <script>
-/* ─── Shopify configuration ───────────────────────────────
-   Replace these with your real store values, then the native
-   Shopify Buy Button + checkout takes over automatically.     */
+/* ─── Shopify configuration ─── */
 const SHOPIFY = {
   domain: 'your-store.myshopify.com',
   storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN',
-  // one Shopify variant ID per state
   variants: {
-    ENERGY:  'YOUR_ENERGY_VARIANT_ID',
-    FOCUS:   'YOUR_FOCUS_VARIANT_ID',
-    BALANCE: 'YOUR_BALANCE_VARIANT_ID'
+    ENERGY: 'YOUR_ENERGY_VARIANT_ID'
   }
 };
 
-const COPY = {
-  ENERGY:{tag:'Calm activation.',desc:'Ruhige Aktivierung für anhaltende Energie – ohne Auf und Ab.'},
-  FOCUS:{tag:'Mental precision.',desc:'Ruhige Klarheit für kontrollierte Aufmerksamkeit über längere Zeit.'},
-  BALANCE:{tag:'Regeneration.',desc:'Stabilisierung für strukturelle Belastbarkeit und Erholung.'}
-};
+/* ─── Scroll reveal — retriggers every time ─── */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+    } else {
+      e.target.classList.remove('vis');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.sr').forEach(el => io.observe(el));
 
-let current = 'ENERGY';
-const $ = s => document.querySelector(s);
+/* ─── Product image "light on" effect ─── */
+const objImg = document.querySelector('.obj-img');
+const objObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('lit'), 600);
+    } else {
+      e.target.classList.remove('lit');
+    }
+  });
+}, { threshold: 0.4 });
+if (objImg) objObs.observe(objImg);
 
-function setState(s){
-  current = s;
-  $('#pName').textContent = s + '.';
-  $('#pTag').textContent = COPY[s].tag;
-  $('#pDesc').textContent = COPY[s].desc;
-  document.querySelectorAll('.vb').forEach(b => b.setAttribute('aria-selected', b.dataset.v === s));
-  $('#shopify-status').textContent = '';
-}
-document.querySelectorAll('.vb').forEach(b => b.onclick = () => setState(b.dataset.v));
-document.querySelectorAll('.card').forEach(c => c.onclick = () => setState(c.dataset.state));
-
-/* Checkout: direct Shopify permalink — works without JS SDK */
-$('#fallbackBtn').onclick = () => {
-  const id = SHOPIFY.variants[current];
+/* ─── Checkout — ENERGY only ─── */
+document.getElementById('fallbackBtn').onclick = () => {
+  const id = SHOPIFY.variants.ENERGY;
   if (!id || id.startsWith('YOUR_')) {
-    $('#shopify-status').textContent = 'Shopify is not connected yet. Add your store domain and variant IDs in the SHOPIFY config.';
+    document.getElementById('shopify-status').textContent = 'Shopify is not connected yet. Add your store domain and variant IDs in the SHOPIFY config.';
     return;
   }
   window.location.href = `https://${SHOPIFY.domain}/cart/${id}:1`;
 };
 
-/* Optional: native Shopify Buy Button UI once real credentials exist */
+/* ─── Optional: native Shopify Buy Button ─── */
 window.addEventListener('load', () => {
   if (!window.ShopifyBuy || SHOPIFY.storefrontAccessToken.startsWith('YOUR_')) return;
   const client = ShopifyBuy.buildClient({domain: SHOPIFY.domain, storefrontAccessToken: SHOPIFY.storefrontAccessToken});
   ShopifyBuy.UI.onReady(client).then(ui => {
-    $('#fallbackBtn').style.display = 'none';
+    document.getElementById('fallbackBtn').style.display = 'none';
     ui.createComponent('product', {
-      id: SHOPIFY.variants[current],
-      node: $('#shopify-buy-mount'),
+      id: SHOPIFY.variants.ENERGY,
+      node: document.getElementById('shopify-buy-mount'),
       options: {
         product:{contents:{img:false,title:false,price:false},text:{button:'ADD TO CART'}},
         cart:{text:{title:'CART',button:'CHECKOUT'}}
@@ -500,7 +543,7 @@ window.addEventListener('load', () => {
   });
 });
 
-/* Knowledge accordion */
+/* ─── Knowledge accordion ─── */
 document.querySelectorAll('.k-row').forEach(r => {
   const toggle = () => {
     const open = r.classList.contains('open');
