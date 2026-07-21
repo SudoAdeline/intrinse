@@ -10,9 +10,9 @@
 <script src="https://cdn.shopify.com/shopifycloud/buy-button-storefront/dist/buy-button.min.js" defer></script>
 <style>
 :root{
-  --stone:#d7d5d2;
-  --paper:#e6e3dc;
-  --fog:#b8b5ae;
+  --stone:#dddbd7;
+  --paper:#f0eeea;
+  --fog:#cdcbc7;
   --ink:#1c1c1a;
   --ink-soft:#4a4845;
   --hair:rgba(28,28,26,.18);
@@ -64,8 +64,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* ── three states ── */
-#states{background:linear-gradient(180deg,#c4c1ba,#bcb9b2)}
-#states::before{background:linear-gradient(180deg,#bfbcb5,#c4c1ba)}
+#states{background:linear-gradient(180deg,#d9d7d3,#d1cfcb)}
+#states::before{background:linear-gradient(180deg,#d4d2ce,#d9d7d3)}
 h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-height:1.32}
 .state-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(56px,9vh,110px);position:relative;z-index:2}
 .st{padding:0 clamp(14px,2.6vw,40px);border-left:1px solid var(--hair);transition:opacity .8s}
@@ -85,8 +85,8 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .st.locked .st-soon{display:block}
 
 /* ── object ── */
-#object{background:linear-gradient(120deg,#cbc8c1,#c0bdb6)}
-#object::before{background:linear-gradient(180deg,#bcb9b2,#cbc8c1)}
+#object{background:linear-gradient(120deg,#e0deda,#d5d3cf)}
+#object::before{background:linear-gradient(180deg,#d1cfcb,#e0deda)}
 .obj{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
 .obj h2.big{font-size:clamp(40px,6.6vw,80px);letter-spacing:-.02em;font-weight:300;line-height:1.02}
 .obj p{font-size:14.5px;color:var(--ink-soft);line-height:1.95}
@@ -136,7 +136,7 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .card.locked .c-line{display:none}
 
 /* ── shop ── */
-#shop{background:linear-gradient(140deg,#d2cfc8,#c2bfb8)}
+#shop{background:linear-gradient(140deg,#e6e5e2,#d7d5d1)}
 .shop-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
 .back{font-size:10px;letter-spacing:.3em;color:var(--ink-soft);display:inline-flex;gap:14px;margin-bottom:48px}
 .p-name{font-size:clamp(46px,7.4vw,92px);font-weight:300;letter-spacing:-.02em;line-height:1}
@@ -173,7 +173,7 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 
 /* ── knowledge ── */
 #knowledge{background:var(--paper)}
-#knowledge::before{background:linear-gradient(180deg,#c2bfb8,var(--paper))}
+#knowledge::before{background:linear-gradient(180deg,#d7d5d1,var(--paper))}
 .k-title{font-size:clamp(42px,7.4vw,88px);font-weight:300;letter-spacing:-.02em;line-height:1}
 .k-list{font-size:15px;line-height:2.15;margin-top:34px;color:var(--ink)}
 .k-rows{margin-top:clamp(46px,7vh,80px);display:flex;flex-direction:column;gap:14px}
@@ -195,8 +195,8 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .k-body-in li::before{content:"—";position:absolute;left:0;opacity:.45}
 
 /* ── closing ── */
-#reveal{background:linear-gradient(160deg,#c8c5be,#bab7b0);text-align:center}
-#reveal::before{background:linear-gradient(180deg,var(--paper),#c8c5be)}
+#reveal{background:linear-gradient(160deg,#dddbd7,#cfcdc9);text-align:center}
+#reveal::before{background:linear-gradient(180deg,var(--paper),#dddbd7)}
 .rv{font-size:clamp(24px,4.2vw,50px);font-weight:200;letter-spacing:.16em}
 .rv-p{font-size:14.5px;color:var(--ink-soft);line-height:2;margin-top:30px;max-width:46ch;margin-left:auto;margin-right:auto}
 
