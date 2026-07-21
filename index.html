@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
 
 /* ── smooth section transitions ── */
-section{position:relative;padding:clamp(90px,13vh,150px) 0}
+section{position:relative;padding:clamp(110px,16vh,180px) 0}
 section::before{content:"";position:absolute;top:-80px;left:0;right:0;height:160px;pointer-events:none;z-index:1}
 
 /* ── scroll reveal ── */
@@ -91,10 +91,10 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .obj h2.big{font-size:clamp(40px,6.6vw,80px);letter-spacing:-.02em;font-weight:300;line-height:1.02}
 .obj p{font-size:14.5px;color:var(--ink-soft);line-height:1.95}
 .stack{margin-top:30px;font-size:14.5px;line-height:2.1}
-.obj-img{filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1));transition:filter 1.4s cubic-bezier(.16,1,.3,1);max-width:400px;margin:0 auto}
+.obj-img{filter:drop-shadow(0 16px 24px rgba(0,0,0,.1));transition:filter 1.4s cubic-bezier(.16,1,.3,1);max-width:400px;margin:0 auto}
 
-/* product glow — "light goes on" */
-.obj-img.lit{filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1)) drop-shadow(0 0 50px rgba(212,86,42,.15))}
+/* product — quiet emphasis once in view */
+.obj-img.lit{filter:drop-shadow(0 16px 24px rgba(0,0,0,.1)) drop-shadow(0 0 30px rgba(212,86,42,.08))}
 
 /* ── choose your state ── */
 #choose{padding:0;min-height:auto}
@@ -108,22 +108,19 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .c2::before{background:linear-gradient(180deg,#a3a29e 0%,#5e7d86 55%,#3f5a63 100%)}
 .c3::before{background:linear-gradient(180deg,#b0aca3 0%,#c3b49c 55%,#9a8d78 100%)}
 
-/* active card hover — expand + glow */
+/* active card hover — expand, quiet accent */
 .card:not(.locked):hover{flex:1.5}
-.card:not(.locked):hover::before{transform:scale(1.06)}
-.card:not(.locked)::after{background:radial-gradient(ellipse at 50% 70%,rgba(212,86,42,.5),rgba(212,86,42,.2) 40%,transparent 70%)}
+.card:not(.locked):hover::before{transform:scale(1.02)}
+.card:not(.locked)::after{background:radial-gradient(ellipse at 50% 70%,rgba(212,86,42,.22),transparent 70%)}
 .card:not(.locked):hover::after{opacity:1}
-.card:not(.locked){box-shadow:0 0 0 rgba(212,86,42,0);transition:flex .6s cubic-bezier(.25,.8,.25,1),box-shadow .6s}
-.card:not(.locked):hover{box-shadow:0 0 120px rgba(212,86,42,.35),0 0 200px rgba(212,86,42,.15)}
+.card:not(.locked){transition:flex .6s cubic-bezier(.25,.8,.25,1)}
 
-.card>*{position:relative;z-index:2;color:#f2efe9;transition:transform .6s cubic-bezier(.25,.8,.25,1),text-shadow .6s,letter-spacing .6s}
-.card:not(.locked):hover>*{transform:scale(1.12)}
+.card>*{position:relative;z-index:2;color:#f2efe9;transition:transform .6s cubic-bezier(.25,.8,.25,1),letter-spacing .6s}
+.card:not(.locked):hover>*{transform:scale(1.03)}
 .c-name{font-size:clamp(19px,2.7vw,32px);letter-spacing:.2em;font-weight:300}
-.card:not(.locked):hover .c-name{text-shadow:0 0 40px rgba(255,255,255,.5),0 0 80px rgba(212,86,42,.3);letter-spacing:.28em}
 .c-sub{font-size:12.5px;margin-top:16px;opacity:.9}
-.card:not(.locked):hover .c-sub{text-shadow:0 0 20px rgba(255,255,255,.3)}
-.c-line{width:26px;height:1px;background:rgba(255,255,255,.7);margin:24px auto 0;transition:width .6s,opacity .6s,box-shadow .6s}
-.card:not(.locked):hover .c-line{width:60px;opacity:1;box-shadow:0 0 12px rgba(255,255,255,.5)}
+.c-line{width:26px;height:1px;background:rgba(255,255,255,.7);margin:24px auto 0;transition:width .6s,opacity .6s}
+.card:not(.locked):hover .c-line{width:60px;opacity:1}
 
 /* locked cards — default is muted color, hover fades to ash grey + COMING SOON */
 .card.locked{cursor:default;pointer-events:auto}
@@ -171,9 +168,13 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .p-note{font-size:10px;color:var(--ink-soft);opacity:.6;margin-top:16px;line-height:1.7;max-width:34ch}
 .p-legal{font-size:10px;color:var(--ink-soft);opacity:.45;line-height:1.7;margin-top:60px;text-align:center;max-width:50ch;margin-left:auto;margin-right:auto}
 
+/* ── manifest ── */
+#manifest{background:var(--stone)}
+#manifest::before{background:linear-gradient(180deg,#d1cfcb,var(--stone))}
+
 /* ── knowledge ── */
 #knowledge{background:var(--paper)}
-#knowledge::before{background:linear-gradient(180deg,#d7d5d1,var(--paper))}
+#knowledge::before{background:linear-gradient(180deg,var(--stone),var(--paper))}
 .k-title{font-size:clamp(42px,7.4vw,88px);font-weight:300;letter-spacing:-.02em;line-height:1}
 .k-list{font-size:15px;line-height:2.15;margin-top:34px;color:var(--ink)}
 .k-rows{margin-top:clamp(46px,7vh,80px);display:flex;flex-direction:column;gap:14px}
@@ -196,7 +197,7 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 
 /* ── closing ── */
 #reveal{background:linear-gradient(160deg,#dddbd7,#cfcdc9);text-align:center}
-#reveal::before{background:linear-gradient(180deg,var(--paper),#dddbd7)}
+#reveal::before{background:linear-gradient(180deg,#d7d5d1,#dddbd7)}
 .rv{font-size:clamp(24px,4.2vw,50px);font-weight:200;letter-spacing:.16em}
 .rv-p{font-size:14.5px;color:var(--ink-soft);line-height:2;margin-top:30px;max-width:46ch;margin-left:auto;margin-right:auto}
 
@@ -241,6 +242,22 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   <img src="img/hero.jpg" alt="INTRINSE — Reveal what is within." class="hero-img">
 </section>
 
+<!-- OBJECT — first product, entry point into the system -->
+<section id="object" class="frame">
+  <div class="wrap">
+    <div class="eyebrow sr">THE OBJECT</div>
+    <div class="obj">
+      <div>
+        <h2 class="big sr sr-d1">Designed<br>to remain.</h2>
+        <div class="rule sr sr-d2"></div>
+        <p class="sr sr-d2">INTRINSE wurde entwickelt,<br>um Teil bewusster Routinen zu werden.</p>
+        <div class="stack sr sr-d3">Form.<br>Inhalt.<br>Verständnis.</div>
+      </div>
+      <img class="obj-img sr sr-d2" src="img/canister-energy.png" alt="INTRINSE ENERGY Protein Blend Dose">
+    </div>
+  </div>
+</section>
+
 <!-- THREE STATES -->
 <section id="states" class="frame">
   <div class="wrap">
@@ -274,18 +291,174 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   </div>
 </section>
 
-<!-- OBJECT -->
-<section id="object" class="frame">
+<!-- MANIFEST — calm transition from system to science -->
+<section id="manifest" class="frame">
   <div class="wrap">
-    <div class="eyebrow sr">THE OBJECT</div>
-    <div class="obj">
-      <div>
-        <h2 class="big sr sr-d1">Designed<br>to remain.</h2>
-        <div class="rule sr sr-d2"></div>
-        <p class="sr sr-d2">INTRINSE wurde entwickelt,<br>um Teil bewusster Routinen zu werden.</p>
-        <div class="stack sr sr-d3">Form.<br>Inhalt.<br>Verständnis.</div>
+    <div class="eyebrow sr">MANIFEST</div>
+    <h2 class="sr sr-d1">Leistungsfähigkeit ist die<br>Summe bewusster Entscheidungen.</h2>
+    <div class="rule sr sr-d1"></div>
+    <p class="sr sr-d2" style="font-size:14.5px;color:var(--ink-soft);line-height:1.9;max-width:52ch">INTRINSE entstand aus einer Beobachtung: Die Grundlagen menschlicher Leistungsfähigkeit sind bekannt — nur selten wird konsequent danach gehandelt.<br><br>Wir entwickeln keine Abkürzungen. Wir entwickeln Werkzeuge für bewusste Entscheidungen.</p>
+  </div>
+</section>
+
+<!-- KNOWLEDGE -->
+<section id="knowledge">
+  <div class="wrap">
+    <div class="eyebrow sr">WISSENSWELT</div>
+    <div class="k-title sr sr-d1">WISSENSWELT.</div>
+    <div class="rule sr sr-d1"></div>
+    <div class="k-list sr sr-d2">Grundlagen.<br>Bausteine.<br>Transformation.<br>Entscheidungen.<br>Bewusste Ernährung.<br>Inhaltsstoffe.</div>
+
+    <div class="k-rows">
+      <div class="k-row sr sr-d1" tabindex="0">
+        <div class="k-num">01</div>
+        <div>
+          <div class="k-h">GRUNDLAGEN</div><div class="k-line"></div>
+          <div class="k-p">Warum Ernährung mehr ist<br>als Kalorien.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Warum essen wir eigentlich?<br>Die Antwort scheint auf den ersten Blick einfach zu sein.<br>Weil unser Körper Energie braucht.<br>Das stimmt.<br>Und doch erzählt diese Antwort nur einen Teil der Geschichte.<br>Denn Nahrung liefert nicht nur Energie.<br>Sie liefert die Voraussetzungen dafür, dass unser Körper jeden Tag unzählige Aufgaben erfüllen kann.<br>Genau dort beginnt ein anderer Blick auf Ernährung.</p>
+          <h4>Leben bedeutet Veränderung.</h4>
+          <p>Wenn wir morgens in den Spiegel schauen, sehen wir meist denselben Menschen wie am Tag zuvor.<br>Unser Körper erlebt diesen Tag jedoch ganz anders.<br>Während wir arbeiten, lernen oder schlafen, sterben Zellen ab.<br>Neue entstehen.<br>Proteine werden aufgebaut.<br>Andere wieder abgebaut.<br>Enzyme werden hergestellt.<br>Gewebe wird erneuert.<br>Unser Körper befindet sich nicht gelegentlich im Wandel.<br>Er lebt davon.<br>Vielleicht gehört genau das zu seinen faszinierendsten Eigenschaften.<br>Er ist niemals fertig.</p>
+          <h4>Mehr als Energie.</h4>
+          <p>Vielleicht hilft ein anderes Bild.<br>Stell dir einen Garten vor.<br>Ein Garten braucht Sonnenlicht.<br>Ohne Licht wächst keine Pflanze.<br>Trotzdem würde niemand sagen, ein Garten bestehe aus Sonnenlicht.<br>Er braucht Wasser.<br>Nährstoffe.<br>Erde.<br>Mikroorganismen.<br>Zeit.<br>Und unzählige Prozesse, die meist im Verborgenen stattfinden.<br>Mit unserem Körper verhält es sich erstaunlich ähnlich.<br>Energie ist notwendig.<br>Leben entsteht dadurch noch nicht.</p>
+          <h4>Unser Körper arbeitet ununterbrochen.</h4>
+          <p>Während du diese Zeilen liest, geschieht in deinem Körper mehr, als wir bewusst wahrnehmen.<br>Milliarden von Zellen arbeiten gleichzeitig.<br>Manche erneuern Gewebe.<br>Andere reparieren kleine Schäden.<br>Wieder andere stellen Moleküle her, die wenige Augenblicke später bereits wieder gebraucht werden.<br>Nach außen wirkt unser Körper ruhig.<br>Im Inneren herrscht eine erstaunliche Betriebsamkeit.<br>Vielleicht nehmen wir sie gerade deshalb so selten wahr.</p>
+          <h4>Nahrung schafft Möglichkeiten.</h4>
+          <p>Häufig sprechen wir über Lebensmittel, als hätten sie eine einzige Aufgabe.<br>Sie liefern Energie.<br>Oder Protein.<br>Oder Vitamine.<br>Unser Körper betrachtet Nahrung jedoch nicht in solchen Kategorien.<br>Er fragt nicht:<br>„Wie viele Kalorien enthält diese Mahlzeit?"<br>Er fragt vielmehr:<br>„Was kann ich daraus machen?"<br>Dieser kleine Unterschied verändert den Blick auf Ernährung.<br>Nahrung ist für unseren Körper nicht einfach Treibstoff.<br>Sie ist Ausgangspunkt.<br>Sie liefert die Bausteine und die Energie, aus denen unser Körper jeden Tag Neues entstehen lässt.</p>
+          <h4>Die Sprache der Biologie.</h4>
+          <p>In der Ernährungswissenschaft begegnen uns viele Begriffe.<br>Proteine.<br>Fette.<br>Kohlenhydrate.<br>Vitamine.<br>Mineralstoffe.<br>Sie helfen uns, Nahrung zu beschreiben.<br>Unser Körper kennt diese Begriffe allerdings nicht.<br>Er arbeitet mit Molekülen.<br>Mit Signalen.<br>Mit Konzentrationen.<br>Mit Bedarf.<br>Vielleicht erklärt genau das, warum Ernährung so selten durch einfache Regeln verstanden werden kann.<br>Biologie ist kein starres System.<br>Sie ist lebendig.</p>
+          <h4>Eine andere Frage.</h4>
+          <p>Vielleicht lohnt es sich deshalb, Ernährung nicht nur danach zu beurteilen, was wir essen.<br>Sondern auch danach, was unser Körper daraus entstehen lässt.<br>Denn genau dort entscheidet sich der eigentliche Wert unserer Nahrung.<br>Nicht auf dem Teller.<br>Sondern in uns.</p>
+          <h4>Und woraus baut sich unser Körper?</h4>
+          <p>Wenn unser Körper sich ständig erneuert, stellt sich fast automatisch die nächste Frage.<br>Welche Bausteine verwendet er dafür eigentlich?<br>Genau dort beginnt das nächste Kapitel.</p>
+        </div></div>
       </div>
-      <img class="obj-img sr sr-d2" src="img/canister-energy.png" alt="INTRINSE ENERGY Protein Blend Dose">
+
+      <div class="k-row sr sr-d2" tabindex="0">
+        <div class="k-num">02</div>
+        <div>
+          <div class="k-h">BAUSTEINE</div><div class="k-line"></div>
+          <div class="k-p">Warum Protein weit mehr ist<br>als Muskelaufbau.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Im ersten Kapitel haben wir gesehen, dass unser Körper sich ständig verändert.<br>Während wir leben, wird aufgebaut.<br>Erneuert.<br>Repariert.<br>Angepasst.<br>Fast automatisch entsteht daraus die nächste Frage.<br>Woraus baut unser Körper eigentlich all das auf?<br>Die Antwort beginnt bei erstaunlich kleinen Bausteinen.</p>
+          <h4>Ein Wort mit Geschichte.</h4>
+          <p>Kaum ein Begriff begegnet uns im Zusammenhang mit Ernährung so häufig wie Protein.<br>Auf Verpackungen.<br>In Werbeanzeigen.<br>Im Fitnessstudio.<br>Man könnte fast meinen, Protein sei eine moderne Entdeckung.<br>Tatsächlich begleitet uns dieser Begriff schon seit dem 19. Jahrhundert.<br>Er leitet sich vom griechischen Wort proteios ab.<br>Es bedeutet sinngemäß:<br>„Von erster Bedeutung."<br>Eine bemerkenswert treffende Bezeichnung.<br>Nicht weil Protein wichtiger wäre als alle anderen Nährstoffe.<br>Sondern weil Wissenschaftler schon früh erkannten, welche grundlegende Rolle diese Stoffgruppe für das Leben spielt.</p>
+          <h4>Mehr als Muskeln.</h4>
+          <p>Fragt man nach Protein, denken viele Menschen zuerst an Muskelaufbau.<br>Das ist verständlich.<br>Muskeln bestehen zu einem großen Teil aus Proteinen.<br>Damit endet ihre Aufgabe jedoch längst nicht.<br>Proteine finden sich nahezu überall in unserem Körper.<br>In unserer Haut.<br>In unseren Haaren.<br>In Enzymen.<br>In Transportmolekülen.<br>In Antikörpern.<br>Und in unzähligen weiteren Strukturen, die wir im Alltag kaum wahrnehmen.<br>Vielleicht wird genau hier deutlich, warum Protein weit mehr ist als ein Thema für Sportler.<br>Es gehört zu den grundlegenden Bausteinen unseres Körpers.</p>
+          <h4>Aus wenigen Bausteinen entsteht erstaunliche Vielfalt.</h4>
+          <p>Vielleicht hilft auch hier ein anderes Bild.<br>Stell dir das Alphabet vor.<br>Es besteht aus nur wenigen Buchstaben.<br>Und doch entstehen daraus Gedichte.<br>Romane.<br>Wissenschaftliche Arbeiten.<br>Oder dieser Text.<br>Nicht die Anzahl der Buchstaben entscheidet.<br>Sondern ihre Reihenfolge.<br>Mit Proteinen verhält es sich erstaunlich ähnlich.<br>Sie bestehen aus Aminosäuren.<br>Aus vergleichsweise wenigen Bausteinen entsteht eine beeindruckende Vielfalt biologischer Strukturen.<br>Vielleicht gehört genau das zu den elegantesten Ideen der Natur.</p>
+          <h4>Aminosäuren.</h4>
+          <p>Proteine bestehen aus einzelnen Aminosäuren, die wie Glieder einer Kette miteinander verbunden sind.<br>Einige davon kann unser Körper selbst herstellen.<br>Andere müssen wir mit der Nahrung aufnehmen.<br>Sie werden deshalb als essenzielle Aminosäuren bezeichnet.<br>Essenziell bedeutet in diesem Zusammenhang nicht besonders wertvoll.<br>Sondern unverzichtbar.<br>Fehlen sie dauerhaft, kann unser Körper bestimmte Proteine nicht mehr in ausreichendem Maß herstellen.</p>
+          <h4>Der Körper baut nicht einfach nach.</h4>
+          <p>Vielleicht ist das der spannendste Gedanke dieses Kapitels.<br>Wenn wir Protein essen, übernimmt unser Körper dieses Protein nicht einfach.<br>Er zerlegt es zunächst wieder in seine einzelnen Aminosäuren.<br>Erst anschließend setzt er daraus seine eigenen Proteine zusammen.<br>Das wirkt auf den ersten Blick fast umständlich.<br>Interessanterweise liegt genau darin einer seiner größten Vorteile.<br>Unser Körper baut nicht nach.<br>Er baut selbst.<br>Genau so entstehen Strukturen, die zu uns passen.</p>
+          <h4>Jeder Tag beginnt von Neuem.</h4>
+          <p>Vielleicht macht gerade das deutlich, warum Ernährung kein einmaliges Ereignis ist.<br>Unser Körper legt keinen endgültigen Vorrat an neuen Strukturen an.<br>Er erneuert sie fortlaufend.<br>Jeden Tag.<br>Ein Leben lang.<br>Nahrung liefert deshalb nicht einfach Material.<br>Sie liefert unserem Körper immer wieder neue Möglichkeiten.</p>
+          <h4>Staunen lohnt sich.</h4>
+          <p>Vielleicht erscheint Protein nach diesem Kapitel ein wenig anders als zuvor.<br>Nicht als Trend.<br>Nicht als Marketingbegriff.<br>Sondern als Teil einer erstaunlich einfachen Idee.<br>Aus wenigen kleinen Bausteinen entsteht die Vielfalt unseres Körpers.<br>Je länger man darüber nachdenkt, desto faszinierender wirkt dieser Gedanke.</p>
+          <h4>Und was geschieht danach?</h4>
+          <p>Bis jetzt haben wir gesehen,<br>warum unser Körper Nahrung benötigt<br>und woraus viele seiner Strukturen aufgebaut sind.<br>Eine Frage bleibt jedoch offen.<br>Wie gelangen diese Bausteine eigentlich dorthin, wo sie gebraucht werden?<br>Genau dort beginnt das nächste Kapitel.</p>
+        </div></div>
+      </div>
+
+      <div class="k-row sr sr-d3" tabindex="0">
+        <div class="k-num">03</div>
+        <div>
+          <div class="k-h">TRANSFORMATION</div><div class="k-line"></div>
+          <div class="k-p">Wie Nahrung Teil unseres<br>Körpers wird.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Nachdem wir gesehen haben, warum unser Körper Nahrung benötigt und aus welchen Bausteinen viele seiner Strukturen entstehen, bleibt eine spannende Frage.<br>Wie gelangen diese Bausteine eigentlich dorthin, wo sie gebraucht werden?<br>Die Antwort beginnt erstaunlich früh.<br>Nicht im Muskel.<br>Nicht im Blut.<br>Sondern bereits mit dem ersten Bissen.</p>
+          <h4>Essen ist erst der Anfang.</h4>
+          <p>Wenn wir ein Lebensmittel betrachten, sehen wir etwas Ganzes.<br>Ein Stück Brot.<br>Einen Apfel.<br>Eine Handvoll Nüsse.<br>Oder einen Proteinshake.<br>Unser Körper sieht etwas anderes.<br>Er sieht Möglichkeiten.<br>Denn bevor ein Nährstoff genutzt werden kann, muss er zunächst aus seiner ursprünglichen Form gelöst werden.<br>Genau dafür gibt es unser Verdauungssystem.</p>
+          <h4>Eine erstaunlich präzise Aufgabe.</h4>
+          <p>Verdauung klingt zunächst nach etwas Alltäglichem.<br>Und tatsächlich begleitet sie uns unser ganzes Leben.<br>Vielleicht nehmen wir gerade deshalb kaum wahr, wie beeindruckend sie eigentlich ist.<br>Unser Körper zerkleinert Nahrung.<br>Er zerlegt große Moleküle in kleinere Bestandteile.<br>Er entscheidet, was aufgenommen werden kann.<br>Und was unseren Körper wieder verlässt.<br>Nicht zufällig.<br>Sondern mit einer Präzision, die täglich millionenfach funktioniert.</p>
+          <h4>Unser Körper übernimmt nichts einfach.</h4>
+          <p>Vielleicht gehört genau das zu den faszinierendsten Eigenschaften unseres Stoffwechsels.<br>Wenn wir Protein essen, wird daraus nicht unmittelbar Muskelgewebe.<br>Wenn wir Fett essen, entsteht daraus nicht automatisch Körperfett.<br>Und auch Vitamine gelangen nicht einfach unverändert dorthin, wo sie gebraucht werden.<br>Unser Körper prüft.<br>Zerlegt.<br>Ordnet ein.<br>Und baut daraus etwas Eigenes.<br>Vielleicht ist genau das einer der Gründe, warum jeder Mensch biologisch ein wenig anders ist.<br>Wir alle essen.<br>Doch jeder Körper verarbeitet Nahrung auf seine eigene Weise.</p>
+          <h4>Die eigentliche Reise beginnt jetzt.</h4>
+          <p>Nachdem Nährstoffe in kleinere Bestandteile zerlegt wurden, gelangen viele von ihnen über den Dünndarm in den Blutkreislauf.<br>Von dort aus beginnt ihre eigentliche Reise.<br>Vielleicht hilft auch hier ein Bild.<br>Stell dir einen Bahnhof vor.<br>Züge treffen aus allen Richtungen ein.<br>Menschen steigen aus.<br>Doch niemand würde behaupten, die Reise ende auf dem Bahnsteig.<br>Sie beginnt dort oft erst.<br>Mit Nährstoffen verhält es sich erstaunlich ähnlich.<br>Die Aufnahme ist nicht das Ziel.<br>Sie ist der Beginn.</p>
+          <h4>Bioverfügbarkeit.</h4>
+          <p>In der Ernährungswissenschaft begegnet uns deshalb ein Begriff, der zunächst etwas technisch klingt.<br>Bioverfügbarkeit.<br>Er beschreibt vereinfacht, welcher Anteil eines aufgenommenen Nährstoffs dem Körper tatsächlich zur Verfügung steht.<br>Vielleicht steckt dahinter eine überraschend einfache Frage.<br>Nicht:<br>„Was esse ich?"<br>Sondern:<br>„Was kommt tatsächlich dort an, wo es gebraucht wird?"<br>Zwischen beiden Antworten kann ein Unterschied liegen.<br>Genau deshalb lohnt es sich, Ernährung nicht nur nach Inhaltsstoffen zu beurteilen.<br>Sondern auch danach, wie gut unser Körper mit ihnen arbeiten kann.</p>
+          <h4>Der Körper entscheidet.</h4>
+          <p>Vielleicht ist genau das die wichtigste Erkenntnis dieses Kapitels.<br>Wir liefern Nahrung.<br>Unser Körper entscheidet.<br>Er entscheidet, welche Bausteine aufgenommen werden.<br>Welche gespeichert werden.<br>Welche unmittelbar genutzt werden.<br>Und welche wieder ausgeschieden werden.<br>Nicht weil er verschwenderisch wäre.<br>Sondern weil Leben ständige Anpassung bedeutet.<br>Vielleicht liegt gerade darin seine größte Stärke.</p>
+          <h4>Eine stille Meisterleistung.</h4>
+          <p>Je besser wir unseren Körper verstehen, desto mehr fällt etwas auf.<br>Die meisten dieser Prozesse bemerken wir überhaupt nicht.<br>Während wir arbeiten.<br>Ein Buch lesen.<br>Oder einen Spaziergang machen.<br>Unser Körper verarbeitet gleichzeitig unzählige Informationen.<br>Er baut auf.<br>Er baut um.<br>Er gleicht aus.<br>Er entscheidet.<br>Vielleicht erscheint uns genau deshalb vieles selbstverständlich.<br>Dabei ist es alles andere als selbstverständlich.</p>
+          <h4>Und wie können wir all das eigentlich wissen?</h4>
+          <p>Je tiefer wir in die Ernährungswissenschaft eintauchen, desto häufiger begegnen uns neue Begriffe.<br>Neue Studien.<br>Neue Empfehlungen.<br>Manchmal scheinen sie sich sogar zu widersprechen.<br>Wie lässt sich da noch erkennen, welche Informationen wirklich vertrauenswürdig sind?<br>Genau darum geht es im nächsten Kapitel.</p>
+        </div></div>
+      </div>
+
+      <div class="k-row sr sr-d4" tabindex="0">
+        <div class="k-num">04</div>
+        <div>
+          <div class="k-h">ENTSCHEIDUNGEN</div><div class="k-line"></div>
+          <div class="k-p">Wie erkennt man gute<br>Ernährungsinformationen.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Je mehr wir über Ernährung lernen, desto häufiger begegnet uns eine überraschende Erfahrung.<br>Zwei scheinbar seriöse Quellen kommen zu unterschiedlichen Ergebnissen.<br>Die eine empfiehlt Kaffee.<br>Die andere rät davon ab.<br>Mal gelten Kohlenhydrate als unverzichtbar.<br>Dann wieder als Problem.<br>Manchmal scheint es, als ändere sich die Ernährungswissenschaft schneller als unser Einkaufszettel.<br>Vielleicht hast du dich deshalb selbst schon einmal gefragt:<br>Wem kann ich eigentlich glauben?</p>
+          <h4>Mehr Wissen bedeutet nicht automatisch mehr Orientierung.</h4>
+          <p>Noch nie war es so einfach, Informationen über Ernährung zu finden.<br>Artikel.<br>Podcasts.<br>Videos.<br>Soziale Medien.<br>Innerhalb weniger Minuten lassen sich unzählige Meinungen zu nahezu jedem Thema finden.<br>Das ist einerseits ein großer Vorteil.<br>Andererseits entsteht dadurch eine neue Herausforderung.<br>Nicht der Mangel an Informationen.<br>Sondern ihre Einordnung.</p>
+          <h4>Wissenschaft funktioniert anders, als viele vermuten.</h4>
+          <p>Vielleicht hilft auch hier ein anderer Blick.<br>Viele Menschen stellen sich Wissenschaft wie ein großes Nachschlagewerk vor.<br>Für jede Frage gibt es eine eindeutige Antwort.<br>Ist sie einmal gefunden, bleibt sie bestehen.<br>Tatsächlich ähnelt Wissenschaft eher einem Gespräch.<br>Neue Erkenntnisse kommen hinzu.<br>Bestehendes Wissen wird überprüft.<br>Manchmal bestätigt.<br>Manchmal korrigiert.<br>Nicht weil Wissenschaft unsicher wäre.<br>Sondern weil sie den Anspruch hat, sich ständig zu verbessern.<br>Vielleicht liegt genau darin ihre größte Stärke.</p>
+          <h4>Eine Studie ist selten die ganze Geschichte.</h4>
+          <p>Wenn über Ernährung berichtet wird, beginnt ein Artikel häufig mit den Worten:<br>„Eine neue Studie zeigt..."<br>Das klingt zunächst überzeugend.<br>Und neue Studien können tatsächlich spannende Erkenntnisse liefern.<br>Gleichzeitig beantwortet eine einzelne Untersuchung nur selten eine komplexe wissenschaftliche Frage vollständig.<br>Vielleicht hilft auch hier ein Bild.<br>Stell dir ein großes Mosaik vor.<br>Jede Studie fügt einen weiteren Stein hinzu.<br>Erst viele sorgfältig zusammengesetzte Steine ergeben ein Bild, das nach und nach klarer wird.<br>Genau deshalb betrachten Wissenschaftler selten nur eine einzelne Veröffentlichung.<br>Sie versuchen, das gesamte Bild zu verstehen.</p>
+          <h4>Gute Fragen verändern gute Antworten.</h4>
+          <p>Vielleicht beginnt Orientierung deshalb mit einer anderen Art zu fragen.<br>Nicht: Ist dieses Lebensmittel gesund?<br>Sondern: Unter welchen Bedingungen könnte es sinnvoll sein?<br>Nicht: Ist Protein gut oder schlecht?<br>Sondern: Welche Rolle spielt Protein innerhalb einer ausgewogenen Ernährung?<br>Je präziser unsere Fragen werden, desto hilfreicher werden meist auch die Antworten.</p>
+          <h4>Skepsis ist ein Zeichen von Interesse.</h4>
+          <p>Das Wort Skepsis wirkt manchmal etwas negativ.<br>Als würde man grundsätzlich alles anzweifeln.<br>In der Wissenschaft bedeutet es etwas anderes.<br>Skepsis bedeutet, Aussagen sorgfältig zu prüfen.<br>Nicht, weil man niemandem vertraut.<br>Sondern weil gute Entscheidungen eine gute Grundlage brauchen.<br>Vielleicht gehört genau diese Haltung zu den wertvollsten Fähigkeiten, die wir entwickeln können.<br>Nicht alles sofort zu glauben.<br>Aber auch nicht alles vorschnell abzulehnen.</p>
+          <h4>Orientierung statt Gewissheit.</h4>
+          <p>Vielleicht erwarten wir von Ernährung manchmal etwas, das sie gar nicht leisten kann.<br>Eine endgültige Antwort.<br>Eine perfekte Ernährungsform.<br>Ein Lebensmittel, das alle Probleme löst.<br>Unser Körper funktioniert jedoch nicht nach einfachen Regeln.<br>Und genau deshalb entstehen gute Ernährungsentscheidungen selten aus einzelnen Schlagzeilen.<br>Sie entstehen aus Zusammenhängen.<br>Aus Erfahrung.<br>Aus sorgfältiger Beobachtung.<br>Und aus der Bereitschaft, dazuzulernen.</p>
+          <h4>Vertrauen entsteht leise.</h4>
+          <p>Vielleicht ist das die wichtigste Erkenntnis dieses Kapitels.<br>Vertrauenswürdige Informationen erkennt man selten daran, dass sie besonders laut auftreten.<br>Sondern daran, dass sie sorgfältig argumentieren.<br>Dass sie Unsicherheiten benennen.<br>Dass sie zwischen gesichertem Wissen und offenen Fragen unterscheiden.<br>Und dass sie bereit sind, ihre Aussagen zu verändern, wenn neue Erkenntnisse hinzukommen.<br>Genau darin liegt keine Schwäche.<br>Sondern wissenschaftliche Redlichkeit.</p>
+          <h4>Was bedeutet das für unseren Alltag?</h4>
+          <p>Wir haben bisher gesehen,<br>warum unser Körper Nahrung benötigt,<br>woraus er sich aufbaut,<br>wie er Nährstoffe verarbeitet<br>und wie wissenschaftliche Erkenntnisse entstehen.<br>Eine Frage bleibt dennoch.<br>Was bedeutet all dieses Wissen eigentlich für die Entscheidungen, die wir jeden Tag treffen?<br>Genau dort beginnt das letzte Kapitel.</p>
+        </div></div>
+      </div>
+
+      <div class="k-row sr sr-d1" tabindex="0">
+        <div class="k-num">05</div>
+        <div>
+          <div class="k-h">BEWUSSTE ERNÄHRUNG</div><div class="k-line"></div>
+          <div class="k-p">Warum Verständnis oft der Anfang<br>besserer Entscheidungen ist.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Nachdem wir gemeinsam einen Blick auf die Grundlagen der Ernährung geworfen haben, könnte man meinen, wir hätten nun alle wichtigen Antworten gefunden.<br>Interessanterweise beginnt an diesem Punkt meist etwas anderes.<br>Neue Fragen.<br>Vielleicht ist genau das ein gutes Zeichen.<br>Denn wer Zusammenhänge besser versteht, merkt oft erst, wie faszinierend unser Körper tatsächlich ist.</p>
+          <h4>Ernährung begleitet uns jeden Tag.</h4>
+          <p>Kaum ein anderer Bereich unseres Lebens begegnet uns so häufig.<br>Wir essen mehrmals täglich.<br>Wir kaufen Lebensmittel ein.<br>Wir kochen.<br>Wir entscheiden.<br>Manchmal bewusst.<br>Manchmal ganz automatisch.<br>Gerade deshalb entsteht leicht der Wunsch nach einfachen Regeln.<br>Eine Liste.<br>Ein Plan.<br>Eine eindeutige Antwort.<br>Unser Körper arbeitet jedoch selten nach dieser Logik.<br>Vielleicht sollte unsere Ernährung das ebenfalls nicht tun.</p>
+          <h4>Verstehen verändert Entscheidungen.</h4>
+          <p>Viele Veränderungen beginnen mit einem Vorsatz.<br>Ab morgen.<br>Ab Montag.<br>Ab dem nächsten Monat.<br>Manchmal funktionieren solche Vorsätze.<br>Oft verschwinden sie jedoch genauso schnell, wie sie entstanden sind.<br>Nicht weil es uns an Disziplin fehlt.<br>Sondern weil Verständnis und Gewohnheiten auf unterschiedliche Weise entstehen.<br>Wer versteht, warum eine Entscheidung sinnvoll ist, trifft sie häufig leichter.<br>Nicht immer.<br>Aber erstaunlich oft.</p>
+          <h4>Wissen und Verständnis sind nicht dasselbe.</h4>
+          <p>Fast jeder weiß, dass Schlaf wichtig ist.<br>Dass Bewegung gesund ist.<br>Dass Gemüse wertvolle Nährstoffe liefert.<br>Trotzdem handeln wir nicht immer danach.<br>Vielleicht liegt der Unterschied darin, dass Informationen leicht gesammelt werden können.<br>Verständnis dagegen wächst.<br>Langsam.<br>Mit jeder neuen Verbindung zwischen einzelnen Gedanken.<br>Vielleicht haben wir diese fünf Kapitel genau deshalb nicht mit Regeln begonnen.<br>Sondern mit Zusammenhängen.</p>
+          <h4>Bewusst bedeutet nicht perfekt.</h4>
+          <p>Das Wort bewusst begegnet uns heute in vielen Bereichen.<br>Bewusst einkaufen.<br>Bewusst konsumieren.<br>Bewusst leben.<br>Manchmal entsteht dabei der Eindruck, jede Entscheidung müsse perfekt sein.<br>Vielleicht dürfen wir auch hier etwas gelassener sein.<br>Unser Körper erwartet keine Perfektion.<br>Er reagiert auf Muster.<br>Auf Gewohnheiten.<br>Auf das, was wir über einen langen Zeitraum tun.<br>Nicht auf eine einzelne Mahlzeit.<br>Nicht auf einen einzelnen Tag.<br>Vielleicht macht genau das Ernährung gleichzeitig anspruchsvoll und beruhigend.</p>
+          <h4>Kleine Entscheidungen.</h4>
+          <p>Vielleicht hilft auch hier ein Bild.<br>Stell dir einen Garten vor.<br>Eine einzelne Bewässerung verändert ihn kaum.<br>Ein sonniger Tag ebenso wenig.<br>Erst viele kleine Einflüsse über einen längeren Zeitraum lassen ihn wachsen.<br>Mit unserem Körper verhält es sich erstaunlich ähnlich.<br>Nicht jede Mahlzeit verändert sofort etwas.<br>Nicht jede Entscheidung ist entscheidend.<br>Viele kleine Entscheidungen zusammen können jedoch einen großen Unterschied machen.<br>Vielleicht besteht bewusste Ernährung genau darin.<br>Nicht ständig alles verändern zu wollen.<br>Sondern den eigenen Gewohnheiten Schritt für Schritt eine gute Richtung zu geben.</p>
+          <h4>Neugierig bleiben.</h4>
+          <p>Vielleicht ist das die wichtigste Erkenntnis dieser Bibliothek.<br>Nicht jedes Lebensmittel lässt sich eindeutig einordnen.<br>Nicht jede Studie beantwortet alle Fragen.<br>Nicht jede Empfehlung passt zu jedem Menschen.<br>Trotzdem können wir lernen.<br>Wir können Zusammenhänge erkennen.<br>Neue Erkenntnisse aufnehmen.<br>Alte Ansichten gelegentlich überdenken.<br>Und mit jeder neuen Frage ein wenig besser verstehen, wie unser Körper funktioniert.<br>Vielleicht ist genau das der eigentliche Wert von Wissen.<br>Nicht Antworten zu sammeln.<br>Sondern neugierig zu bleiben.</p>
+          <h4>Eine Reise ohne Endpunkt.</h4>
+          <p>Die Wissenschaft entwickelt sich weiter.<br>Unser Wissen ebenfalls.<br>Vielleicht ist genau das das Schöne daran.<br>Bewusste Ernährung ist kein Ziel, das irgendwann erreicht ist.<br>Sie ist ein Prozess.<br>Ein Prozess, der mit jeder neuen Erkenntnis ein wenig klarer wird.<br>Und vielleicht beschreibt genau das auch den Gedanken hinter Conscious Nutrition.<br>Nicht als Ernährungsform.<br>Nicht als Regelwerk.<br>Sondern als Haltung.<br>Mit Interesse auf den eigenen Körper zu schauen.<br>Zusammenhänge verstehen zu wollen.<br>Und Entscheidungen möglichst bewusst zu treffen.<br>Nicht mehr.<br>Aber auch nicht weniger.</p>
+          <p style="margin-top:26px">Bewusste Ernährung beginnt nicht auf dem Teller.<br>Sie beginnt in dem Moment, in dem wir anfangen, Zusammenhänge verstehen zu wollen.</p>
+        </div></div>
+      </div>
+
+      <div class="k-row sr sr-d2" tabindex="0">
+        <div class="k-num">06</div>
+        <div>
+          <div class="k-h">INHALTSSTOFFE</div><div class="k-line"></div>
+          <div class="k-p">Warum wir bestimmte<br>Inhaltsstoffe wählen.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <h4>ENERGY — Warum Guarana?</h4>
+          <p>Für ENERGY haben wir uns bewusst für Guarana entschieden.<br>Es enthält von Natur aus Koffein und gehört zu den am besten untersuchten natürlichen Koffeinquellen.<br>Gleichzeitig enthält Guarana weitere natürliche Pflanzenbestandteile, die es von isoliertem Koffein unterscheiden.<br>Deshalb bildet Guarana die Grundlage unserer Rezeptur.</p>
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -331,113 +504,9 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
 
         <div class="p-ship sr sr-d3"><span>—</span><span>Ships within 1–3 business days.</span></div>
       </div>
-      <img class="sr sr-d2" src="img/canister-alt.png" alt="INTRINSE ENERGY Dose" style="filter:drop-shadow(0 30px 50px rgba(0,0,0,.2)) drop-shadow(0 6px 16px rgba(0,0,0,.1));max-width:400px;margin:0 auto">
+      <img class="sr sr-d2" src="img/canister-alt.png" alt="INTRINSE ENERGY Dose" style="filter:drop-shadow(0 16px 24px rgba(0,0,0,.1));max-width:400px;margin:0 auto">
     </div>
     <div class="p-legal">Nahrungsergänzungsmittel. Kein Ersatz für eine ausgewogene Ernährung und gesunde Lebensweise. Pflanzliches Proteinpulver (Erbse &amp; Reis) mit Guarana und L-Theanin. 500 g. Vegan.</div>
-  </div>
-</section>
-
-<!-- KNOWLEDGE -->
-<section id="knowledge">
-  <div class="wrap">
-    <div class="eyebrow sr">KNOWLEDGE</div>
-    <div class="k-title sr sr-d1">KNOWLEDGE.</div>
-    <div class="rule sr sr-d1"></div>
-    <div class="k-list sr sr-d2">Foundation.<br>States.<br>Ingredients.<br>Connections.</div>
-
-    <div class="k-rows">
-      <div class="k-row sr sr-d1" tabindex="0">
-        <div class="k-num">01</div>
-        <div>
-          <div class="k-h">FOUNDATION</div><div class="k-line"></div>
-          <div class="k-p">Die biologischen Grundlagen von<br>Protein, Aminosäuren und Anpassung.</div>
-        </div>
-        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
-        <div class="k-body"><div class="k-body-in">
-          <h4>PROTEIN — DIE GRUNDLAGE BIOLOGISCHER LEISTUNGSFÄHIGKEIT</h4>
-          <p>Protein gehört zu den fundamentalen Bausteinen des menschlichen Organismus. Jede Zelle, jedes Gewebe und nahezu jeder Anpassungsprozess innerhalb des Körpers ist direkt oder indirekt auf Aminosäuren angewiesen.</p>
-          <p>Muskulatur. Enzyme. Hormone. Neurotransmitter. Bindegewebe. Immunsystem. Viele der Prozesse, die wir mit Leistungsfähigkeit, Regeneration oder Anpassungsfähigkeit verbinden, beginnen auf dieser Ebene. Protein ist deshalb weit mehr als ein Nährstoff für Sportler – es ist ein zentraler Bestandteil menschlicher Physiologie.</p>
-          <h4>STRUKTUR UND FUNKTION</h4>
-          <p>Der Körper befindet sich in einem kontinuierlichen Prozess von Aufbau, Umbau und Erneuerung. Gewebe wird regeneriert. Proteine werden synthetisiert. Zellen werden ersetzt. Für diese Prozesse benötigt der Organismus Aminosäuren. Ein Teil davon kann selbst gebildet werden; die essentiellen Aminosäuren müssen über die Ernährung aufgenommen werden.</p>
-          <h4>QUALITÄT ENTSCHEIDET</h4>
-          <p>Entscheidend ist nicht allein die Menge, sondern was der Körper tatsächlich nutzen kann:</p>
-          <ul>
-            <li>das Aminosäureprofil</li><li>die Verfügbarkeit essentieller Aminosäuren</li>
-            <li>die biologische Wertigkeit</li><li>die Verdaulichkeit</li>
-            <li>die Verträglichkeit</li><li>die sensorische Qualität</li>
-          </ul>
-          <h4>PFLANZLICHE PROTEINE</h4>
-          <p>Erbsenprotein zeichnet sich durch einen hohen Gehalt bestimmter essentieller Aminosäuren aus. Reisprotein ergänzt dieses Profil und trägt zu einer ausgewogeneren Aminosäurezusammensetzung bei. Durch die gezielte Kombination beider Quellen entsteht ein vollständigeres Proteinspektrum. Nicht als Kompromiss. Sondern als bewusste Formulierung.</p>
-          <h4>DIE BASIS</h4>
-          <p>Leistungsfähigkeit entsteht selten durch einzelne Maßnahmen. Bewegung. Erholung. Ernährung. Schlaf. Protein ist kein Wundermittel – aber eine der grundlegenden Voraussetzungen, auf denen zahlreiche biologische Prozesse aufbauen.</p>
-        </div></div>
-      </div>
-
-      <div class="k-row sr sr-d2" tabindex="0">
-        <div class="k-num">02</div>
-        <div>
-          <div class="k-h">STATES</div><div class="k-line"></div>
-          <div class="k-p">ENERGY. FOCUS. BALANCE.<br>Drei Zustände. Ein System.</div>
-        </div>
-        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
-        <div class="k-body"><div class="k-body-in">
-          <h4>DER RHYTHMUS MENSCHLICHER LEISTUNGSFÄHIGKEIT</h4>
-          <p>Der menschliche Organismus befindet sich nicht in einem konstanten Zustand. Im Laufe eines Tages verändern sich Aufmerksamkeit, Energie, Regeneration und Leistungsfähigkeit kontinuierlich. Leistungsfähigkeit ist deshalb kein dauerhafter Zustand – sie ist ein dynamischer Prozess.</p>
-          <h4>ENERGY — AKTIVIERUNG</h4>
-          <p>Jede Form von Bewegung beginnt mit Aktivierung. Der Organismus mobilisiert Ressourcen. Aufmerksamkeit richtet sich nach außen. Handlung wird möglich. Ein gesunder Aktivierungszustand fühlt sich nicht hektisch an. Er schafft Klarheit für den nächsten Schritt.</p>
-          <h4>FOCUS — KONZENTRATION</h4>
-          <p>Aktivierung allein erzeugt noch keine Richtung. Fokus entsteht dort, wo Aufmerksamkeit bewusst gelenkt wird. Informationen werden gefiltert. Prioritäten werden gesetzt. Komplexität wird reduziert. Fokus bedeutet nicht Anspannung. Fokus bedeutet Klarheit.</p>
-          <h4>BALANCE — REGENERATION</h4>
-          <p>Jeder Anpassungsprozess benötigt Erholung. Gewebe wird erneuert. Energiespeicher werden aufgefüllt. Das Nervensystem verarbeitet Belastungen und Reize. Regeneration ist kein Gegensatz zu Leistungsfähigkeit – sie ist eine ihrer Voraussetzungen.</p>
-          <h4>EIN SYSTEM STATT EINZELNER MOMENTE</h4>
-          <p>Keiner dieser Zustände ist wichtiger als die anderen. Nachhaltige Leistungsfähigkeit entsteht dort, wo sie miteinander in Balance stehen. Drei Zustände. Ein System.</p>
-        </div></div>
-      </div>
-
-      <div class="k-row sr sr-d3" tabindex="0">
-        <div class="k-num">03</div>
-        <div>
-          <div class="k-h">INGREDIENTS</div><div class="k-line"></div>
-          <div class="k-p">Warum bestimmte Inhaltsstoffe ausgewählt wurden.<br>Qualität. Funktion. Zusammenhang.</div>
-        </div>
-        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
-        <div class="k-body"><div class="k-body-in">
-          <h4>FUNCTION FOLLOWS PURPOSE</h4>
-          <p>Jede Formulierung beginnt mit einer einfachen Frage: Welchen Zustand soll sie unterstützen? Inhaltsstoffe stehen bei INTRINSE niemals für sich allein. Nicht aufgrund von Trends. Nicht aufgrund ihrer Bekanntheit. Ihre Bedeutung entsteht immer im Zusammenhang mit dem Zustand, den sie begleiten sollen.</p>
-          <h4>ENERGY — GUARANA</h4>
-          <p>Guarana zählt zu den natürlichen Quellen von Koffein. Aufgrund seiner pflanzlichen Matrix wird es häufig für eine gleichmäßigere Freisetzung geschätzt. Innerhalb von ENERGY dient Guarana nicht dem kurzfristigen Reiz, sondern der Unterstützung bewusster Aktivierung.</p>
-          <h4>ENERGY — L-THEANIN</h4>
-          <p>L-Theanin ist eine natürlich vorkommende Aminosäure, die insbesondere aus grünem Tee bekannt ist. Die Kombination von Koffein und L-Theanin gehört zu den am häufigsten untersuchten Kombinationen im Bereich kognitiver Leistungsfähigkeit.</p>
-          <h4>FOCUS — LION'S MANE</h4>
-          <p>Lion's Mane (Hericium erinaceus) ist ein traditionell genutzter Vitalpilz mit langer Anwendungsgeschichte. In den letzten Jahren hat er zunehmendes wissenschaftliches Interesse im Zusammenhang mit kognitiven Funktionen erhalten. Innerhalb von FOCUS steht er für mentale Klarheit.</p>
-          <h4>BALANCE — ASHWAGANDHA</h4>
-          <p>Ashwagandha (Withania somnifera) gehört zu den traditionsreichsten Pflanzen des Ayurveda. Heute wird die Pflanze weltweit im Zusammenhang mit Stressregulation, Anpassungsfähigkeit und Regeneration untersucht.</p>
-          <h4>BEYOND INDIVIDUAL INGREDIENTS</h4>
-          <p>Kein einzelner Inhaltsstoff definiert ein Produkt. Entscheidend ist die Qualität der Rohstoffe. Die Logik der Formulierung. Die Dosierung. Die Kombination. Der Zusammenhang.</p>
-        </div></div>
-      </div>
-
-      <div class="k-row sr sr-d4" tabindex="0">
-        <div class="k-num">04</div>
-        <div>
-          <div class="k-h">CONNECTIONS</div><div class="k-line"></div>
-          <div class="k-p">Ernährung, Regeneration, Aufmerksamkeit<br>und Leistungsfähigkeit im Kontext.</div>
-        </div>
-        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
-        <div class="k-body"><div class="k-body-in">
-          <h4>DER KÖRPER ARBEITET ALS SYSTEM</h4>
-          <p>Schlaf beeinflusst Konzentration. Ernährung beeinflusst Regeneration. Regeneration beeinflusst Leistungsfähigkeit. Bewegung beeinflusst Stoffwechselprozesse. Stress beeinflusst Aufmerksamkeit. Jeder Bereich steht mit anderen Bereichen in Verbindung.</p>
-          <h4>ANPASSUNG</h4>
-          <p>Auf Belastung folgt Anpassung. Auf Bewegung folgt Entwicklung. Auf Regeneration folgt Erneuerung. Leistungsfähigkeit ist kein Zustand, den man erreicht – sie ist ein fortlaufender Prozess.</p>
-          <h4>KONSISTENZ</h4>
-          <p>Große Veränderungen entstehen selten durch einzelne Ereignisse. Sie entstehen durch Wiederholung. Durch Routinen. Durch Gewohnheiten. Nicht jede einzelne Entscheidung ist entscheidend – aber ihre Summe ist es.</p>
-          <h4>AUFMERKSAMKEIT</h4>
-          <p>Moderne Leistungsfähigkeit beginnt oft nicht mit mehr Energie, sondern mit besserer Aufmerksamkeit. Aufmerksamkeit ist eine Ressource. Und wie jede Ressource verdient sie bewussten Umgang.</p>
-          <h4>DIE VERBINDUNG</h4>
-          <p>FOUNDATION erklärt die Grundlagen. STATES beschreiben die natürlichen Zustände menschlicher Leistungsfähigkeit. INGREDIENTS zeigen, wie Formulierungen entwickelt werden. KNOWLEDGE verbindet alles miteinander.</p>
-        </div></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -445,7 +514,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
 <section id="reveal">
   <div class="wrap">
     <div class="rv sr">REVEAL WHAT IS WITHIN.</div>
-    <p class="rv-p sr sr-d1">Wir glauben, dass Entwicklung kein Ziel ist. Sie ist ein Prozess. Ein Prozess aus Aufmerksamkeit, Anpassung, Regeneration und bewussten Entscheidungen.</p>
+    <p class="rv-p sr sr-d1">Wir glauben, dass Entwicklung kein Ziel ist, sondern ein Prozess aus Aufmerksamkeit, Anpassung, Regeneration und bewussten Entscheidungen.</p>
   </div>
 </section>
 
@@ -453,7 +522,7 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   <div class="wrap f-g">
     <div class="f-logo">INTRINSE</div>
     <div class="f-links">
-      <a href="#shop">Shop</a><a href="#knowledge">Knowledge</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+      <a href="#shop">Shop</a><a href="#knowledge">Wissenswelt</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
     </div>
     <div>&copy; 2026 INTRINSE — Nothing more, nothing less.</div>
   </div>
