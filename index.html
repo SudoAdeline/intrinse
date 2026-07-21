@@ -103,14 +103,14 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .card{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 20px;text-align:center;overflow:hidden;transition:flex .6s cubic-bezier(.25,.8,.25,1)}
 .card::before{content:"";position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.7,.3,1),filter .6s,box-shadow .6s}
 .card::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .8s;pointer-events:none;z-index:1}
-.c1::before{background:linear-gradient(180deg,#a9a49c 0%,#c47a4e 55%,#8e5c3c 100%)}
-.c2::before{background:linear-gradient(180deg,#a3a29e 0%,#5e7d86 55%,#3f5a63 100%)}
-.c3::before{background:linear-gradient(180deg,#b0aca3 0%,#c3b49c 55%,#9a8d78 100%)}
+.c1::before{background:linear-gradient(180deg,#a9a49c 0%,#b8503c 55%,#683127 100%)}
+.c2::before{background:linear-gradient(180deg,#a3a29e 0%,#446972 55%,#202d30 100%)}
+.c3::before{background:linear-gradient(180deg,#b0aca3 0%,#b49e86 55%,#7e6b57 100%)}
 
 /* active card hover — expand, quiet accent */
 .card:not(.locked):hover{flex:1.5}
 .card:not(.locked):hover::before{transform:scale(1.02)}
-.card:not(.locked)::after{background:radial-gradient(ellipse at 50% 70%,rgba(212,86,42,.22),transparent 70%)}
+.card:not(.locked)::after{background:radial-gradient(ellipse at 50% 70%,rgba(156,74,58,.22),transparent 70%)}
 .card:not(.locked):hover::after{opacity:1}
 .card:not(.locked){transition:flex .6s cubic-bezier(.25,.8,.25,1)}
 
