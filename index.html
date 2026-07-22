@@ -64,7 +64,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 
 /* ── three states ── */
 #states{background:linear-gradient(180deg,#d9d7d3,#d1cfcb)}
-#states::before{background:linear-gradient(180deg,#d4d2ce,#d9d7d3)}
+#states::before{background:linear-gradient(180deg,var(--stone),#d9d7d3)}
 h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-height:1.32}
 .state-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(64px,10vh,130px);position:relative;z-index:2}
 .st{padding:0 clamp(14px,2.6vw,40px);border-left:1px solid var(--hair);transition:opacity .8s;position:relative}
@@ -126,11 +126,11 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 
 /* ── manifest ── */
 #manifest{background:var(--stone)}
-#manifest::before{background:linear-gradient(180deg,#d1cfcb,var(--stone))}
+#manifest::before{background:linear-gradient(180deg,#d4d2ce,var(--stone))}
 
 /* ── knowledge ── */
 #knowledge{background:var(--paper)}
-#knowledge::before{background:linear-gradient(180deg,var(--stone),var(--paper))}
+#knowledge::before{background:linear-gradient(180deg,#d5d3cf,var(--paper))}
 .k-title{font-size:clamp(42px,7.4vw,88px);font-weight:300;letter-spacing:-.02em;line-height:1}
 .k-list{font-size:15px;line-height:2.15;margin-top:34px;color:var(--ink)}
 .k-rows{margin-top:clamp(46px,7vh,80px);display:flex;flex-direction:column;gap:14px}
@@ -198,28 +198,19 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   <img src="img/hero.jpg" alt="INTRINSE — Reveal what is within." class="hero-img">
 </section>
 
-<!-- OBJECT — first product, entry point into the system -->
-<section id="object" class="frame">
-  <div class="en-glow"></div>
+<!-- PHILOSOPHY -->
+<section id="manifest" class="frame">
   <div class="wrap">
-    <div class="eyebrow sr">DER ERSTE ZUSTAND</div>
-    <div class="en-row sr sr-d1">
-      <h2 class="en-h">ENERGY.</h2>
-      <div class="en-next">
-        <span>FOCUS.</span>
-        <span>BALANCE.</span>
-      </div>
-    </div>
-    <div class="en-tag sr sr-d2">Calm activation.</div>
-    <div class="rule sr sr-d2"></div>
-    <div class="en-body sr sr-d3">Ruhige Aktivierung für anhaltende Energie.</div>
+    <h2 class="sr sr-d1">Leistungsfähigkeit ist die<br>Summe bewusster Entscheidungen.</h2>
+    <div class="rule sr sr-d1"></div>
+    <p class="sr sr-d2" style="font-size:13px;color:var(--ink-soft);opacity:.75;letter-spacing:.02em">Gute Entscheidungen beginnen mit Verständnis.</p>
   </div>
 </section>
 
-<!-- THREE STATES -->
+<!-- THE SYSTEM -->
 <section id="states" class="frame">
   <div class="wrap">
-    <h2 class="sr sr-d1">THREE STATES.<br>EIN PHYSIOLOGISCHES SYSTEM.</h2>
+    <h2 class="sr sr-d1">THREE STATES.<br>ONE PHYSIOLOGICAL SYSTEM.</h2>
     <div class="rule sr sr-d1"></div>
     <p class="sr sr-d2" style="font-size:14.5px;color:var(--ink-soft);line-height:1.9">Aktivierung.<br>Konzentration.<br>Regeneration.</p>
 
@@ -248,12 +239,21 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   </div>
 </section>
 
-<!-- MANIFEST — calm transition from system to science -->
-<section id="manifest" class="frame">
+<!-- ENERGY — the first state, the beginning of the journey -->
+<section id="object" class="frame">
+  <div class="en-glow"></div>
   <div class="wrap">
-    <h2 class="sr sr-d1">Leistungsfähigkeit ist die<br>Summe bewusster Entscheidungen.</h2>
-    <div class="rule sr sr-d1"></div>
-    <p class="sr sr-d2" style="font-size:13px;color:var(--ink-soft);opacity:.75;letter-spacing:.02em">Gute Entscheidungen beginnen mit Verständnis.</p>
+    <div class="eyebrow sr">DER ERSTE ZUSTAND</div>
+    <div class="en-row sr sr-d1">
+      <h2 class="en-h">ENERGY.</h2>
+      <div class="en-next">
+        <span>FOCUS.</span>
+        <span>BALANCE.</span>
+      </div>
+    </div>
+    <div class="en-tag sr sr-d2">Calm activation.</div>
+    <div class="rule sr sr-d2"></div>
+    <div class="en-body sr sr-d3">Ruhige Aktivierung für anhaltende Energie.</div>
   </div>
 </section>
 
