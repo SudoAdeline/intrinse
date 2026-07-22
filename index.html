@@ -73,7 +73,11 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 /* ── object / energy state intro ── */
 #object{background:linear-gradient(120deg,#dcdddd,#d0d2d4);overflow:hidden}
 #object::before{background:linear-gradient(180deg,#ccced0,#dcdddd)}
-.en-glow{position:absolute;width:40vw;height:40vw;max-width:560px;max-height:560px;left:-10vw;top:50%;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle,rgba(156,74,58,.14),transparent 70%);filter:blur(70px);pointer-events:none;z-index:1}
+.en-glow{position:absolute;width:66vw;height:66vw;max-width:860px;max-height:860px;left:-18vw;top:50%;transform:translateY(-50%);border-radius:50%;
+  background:
+    radial-gradient(circle at 42% 48%,rgba(199,104,72,.38) 0%,transparent 42%),
+    radial-gradient(circle,rgba(156,74,58,.34) 0%,rgba(156,74,58,.14) 46%,transparent 74%);
+  filter:blur(80px);pointer-events:none;z-index:1}
 .en-h{font-size:clamp(40px,7vw,84px);font-weight:200;letter-spacing:.06em;line-height:1;color:var(--ink);position:relative;z-index:2}
 .en-tag{font-size:clamp(19px,2.4vw,26px);font-weight:300;margin-top:30px;position:relative;z-index:2}
 .en-body{font-size:14px;color:var(--ink-soft);margin-top:6px;max-width:46ch;position:relative;z-index:2}
