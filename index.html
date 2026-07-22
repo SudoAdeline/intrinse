@@ -99,25 +99,25 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .en-tag{font-size:clamp(19px,2.4vw,26px);font-weight:300;margin-top:30px;position:relative;z-index:2}
 .en-body{font-size:14px;color:var(--ink-soft);margin-top:6px;max-width:46ch;position:relative;z-index:2}
 
-/* ── the decision — quiet product selection ── */
-#decision{background:linear-gradient(120deg,#e2e0dc,#d7d5d1)}
-#decision::before{background:linear-gradient(180deg,var(--paper),#e2e0dc)}
-.dec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1px,.15vw,1px);margin-top:clamp(56px,9vh,100px);position:relative;z-index:2}
-.dec{position:relative;padding:clamp(48px,7vw,72px) clamp(14px,2.4vw,28px);text-align:center;overflow:hidden;border:1px solid var(--hair);transition:border-color .5s}
-.dec-glow{position:absolute;inset:0;opacity:.55;pointer-events:none;background:radial-gradient(ellipse at 50% 32%,var(--dec-color,transparent) 0%,transparent 72%);transition:opacity .6s;z-index:0}
-.dec-1{--dec-color:rgba(156,74,58,.16)}
-.dec-2{--dec-color:rgba(60,85,91,.14)}
-.dec-3{--dec-color:rgba(163,143,121,.16)}
-.dec-n{font-size:11px;letter-spacing:.3em;color:var(--ink-soft);opacity:.6;position:relative;z-index:2}
-.dec-t{font-size:clamp(22px,3vw,32px);letter-spacing:.14em;font-weight:300;margin-top:18px;position:relative;z-index:2}
+/* ── the decision — color as atmosphere, not panels ── */
+#decision{background:linear-gradient(180deg,var(--paper) 0%,#dedcd8 40%,#dedcd8 100%);overflow:hidden}
+#decision::before{background:linear-gradient(180deg,var(--paper),var(--paper))}
+#decision h2{position:relative;z-index:2}
+.dec-atmosphere{position:absolute;inset:0;pointer-events:none;z-index:1}
+.dec-glow{position:absolute;bottom:-15%;width:44%;height:75%;filter:blur(100px);opacity:.7;transition:opacity 1.2s}
+.dec-glow-1{left:-4%;background:radial-gradient(ellipse at 50% 100%,rgba(156,74,58,.6),transparent 68%)}
+.dec-glow-2{left:28%;background:radial-gradient(ellipse at 50% 100%,rgba(60,85,91,.5),transparent 68%)}
+.dec-glow-3{left:60%;background:radial-gradient(ellipse at 50% 100%,rgba(163,143,121,.55),transparent 68%)}
+.dec-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(70px,11vh,140px);position:relative;z-index:2}
+.dec{position:relative;padding:0 clamp(14px,2.4vw,28px) clamp(64px,11vh,130px);text-align:center}
+.dec-t{font-size:clamp(23px,3.2vw,34px);letter-spacing:.16em;font-weight:300;transition:letter-spacing .6s}
 .dec-1 .dec-t{color:var(--energy)}
 .dec-2 .dec-t{color:var(--focus)}
 .dec-3 .dec-t{color:var(--balance)}
-.dec-s{font-size:12.5px;color:var(--ink-soft);margin-top:12px;position:relative;z-index:2}
-.dec:not(.locked):hover{border-color:var(--ink)}
-.dec:not(.locked):hover .dec-glow{opacity:1}
-.dec.locked{opacity:.5;cursor:default}
-.dec-soon{font-size:9px;letter-spacing:.28em;color:var(--ink-soft);margin-top:16px;opacity:.7;position:relative;z-index:2}
+.dec-s{font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+.dec:not(.locked):hover .dec-t{letter-spacing:.24em}
+.dec.locked{opacity:.55;cursor:default}
+.dec-soon{font-size:9px;letter-spacing:.28em;color:var(--ink-soft);margin-top:16px;opacity:.7}
 
 /* ── manifest ── */
 #manifest{background:var(--stone)}
@@ -170,6 +170,10 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   h1.states{gap:18px}
   #hero{min-height:auto;padding:88px 0 40px}
   .hero-img{position:static;width:100%;height:auto;object-fit:contain}
+  .dec-glow{left:0!important;width:100%;height:38%;filter:blur(60px);opacity:1}
+  .dec-glow-1{bottom:62%}
+  .dec-glow-2{bottom:31%}
+  .dec-glow-3{bottom:0}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -427,26 +431,24 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
 
 <!-- THE DECISION -->
 <section id="decision" class="frame">
+  <div class="dec-atmosphere">
+    <div class="dec-glow dec-glow-1"></div>
+    <div class="dec-glow dec-glow-2"></div>
+    <div class="dec-glow dec-glow-3"></div>
+  </div>
   <div class="wrap">
-    <div class="eyebrow sr">DIE ENTSCHEIDUNG</div>
-    <h2 class="sr sr-d1">WÄHLE BEWUSST.</h2>
+    <h2 class="sr sr-d1">CHOOSE YOUR STATE.</h2>
     <div class="dec-grid">
       <a href="energy.html" class="dec dec-1 sr sr-d1">
-        <div class="dec-glow"></div>
-        <div class="dec-n">01</div>
         <div class="dec-t">ENERGY.</div>
         <div class="dec-s">Calm activation.</div>
       </a>
       <div class="dec dec-2 locked sr sr-d2">
-        <div class="dec-glow"></div>
-        <div class="dec-n">02</div>
         <div class="dec-t">FOCUS.</div>
         <div class="dec-s">Mental precision.</div>
         <div class="dec-soon">COMING SOON</div>
       </div>
       <div class="dec dec-3 locked sr sr-d3">
-        <div class="dec-glow"></div>
-        <div class="dec-n">03</div>
         <div class="dec-t">BALANCE.</div>
         <div class="dec-s">Regeneration.</div>
         <div class="dec-soon">COMING SOON</div>
