@@ -56,10 +56,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 .cart{margin-top:32px}
 .cart button, .shopify-buy__btn{
   all:unset;box-sizing:border-box;display:flex!important;align-items:center;justify-content:space-between;
-  width:100%;max-width:330px;padding:16px 0;border-bottom:1px solid var(--ink)!important;
+  width:100%;max-width:330px;padding:17px 26px;border:1px solid rgba(156,82,60,.5)!important;
   font-family:var(--f)!important;font-size:14px!important;letter-spacing:.16em;cursor:pointer;
-  background:transparent!important;color:var(--ink)!important;border-radius:0!important;transition:opacity .3s}
-.cart button:hover{opacity:.55}
+  background:rgba(156,82,60,.05)!important;color:var(--ink)!important;border-radius:0!important;
+  transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+.cart button:hover{background:rgba(156,82,60,.1)!important;border-color:rgba(156,82,60,.85)!important;box-shadow:0 8px 22px rgba(156,82,60,.16)}
 .cart button span.arw{transition:transform .3s}
 .cart button:hover span.arw{transform:translateX(9px)}
 #shopify-status{font-size:11px;color:var(--ink-soft);margin-top:14px;min-height:16px;letter-spacing:.05em}
