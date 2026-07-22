@@ -50,7 +50,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 .p-tag{font-size:clamp(19px,2.4vw,27px);font-weight:300;margin-top:8px}
 .p-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.9;margin-top:26px;max-width:34ch}
 .p-size{font-size:14px;color:var(--ink-soft)}
-.p-price{font-size:clamp(38px,5vw,58px);font-weight:300;margin-top:6px;letter-spacing:-.01em}
+.p-price{font-size:clamp(31px,4.1vw,48px);font-weight:300;margin-top:6px;letter-spacing:-.01em}
 .p-vat{font-size:11.5px;color:var(--ink-soft);margin-top:6px}
 .p-ship{font-size:11.5px;color:var(--ink-soft);margin-top:34px;display:flex;gap:12px}
 .cart{margin-top:32px}
@@ -100,21 +100,20 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
         <p class="p-desc sr sr-d2">Pflanzliches Proteinpulver mit Guarana und L-Theanin.</p>
         <div class="rule sr sr-d2"></div>
 
-        <div class="p-size sr sr-d2">500 g</div>
-        <div class="p-price sr sr-d2">39 &euro;</div>
-        <div class="p-vat sr sr-d2">inkl. MwSt. zzgl. Versand</div>
+        <div class="p-size sr sr-d2">475 g</div>
+        <div class="p-price sr sr-d2">44 &euro;</div>
 
         <div class="cart sr sr-d3">
           <div id="shopify-buy-mount"></div>
-          <button id="fallbackBtn" type="button">ADD TO CART <span class="arw">&rarr;</span></button>
+          <button id="fallbackBtn" type="button">CHOOSE ENERGY. <span class="arw">&rarr;</span></button>
           <div id="shopify-status"></div>
         </div>
 
-        <div class="p-ship sr sr-d3"><span>—</span><span>Ships within 1–3 business days.</span></div>
+        <div class="p-ship sr sr-d3"><span>—</span><span>Lieferzeit 1–3 Werktage.</span></div>
       </div>
       <img class="sr sr-d2" src="img/canister-alt.png" alt="INTRINSE ENERGY Dose" style="filter:drop-shadow(0 16px 24px rgba(0,0,0,.1));max-width:400px;margin:0 auto">
     </div>
-    <div class="p-legal">Nahrungsergänzungsmittel. Kein Ersatz für eine ausgewogene Ernährung und gesunde Lebensweise. Pflanzliches Proteinpulver (Erbse &amp; Reis) mit Guarana und L-Theanin. 500 g. Vegan.</div>
+    <div class="p-legal">Nahrungsergänzungsmittel. Kein Ersatz für eine ausgewogene Ernährung und gesunde Lebensweise. Pflanzliches Proteinpulver (Erbse &amp; Reis) mit Guarana und L-Theanin. 475 g. Vegan.</div>
   </div>
 </section>
 
@@ -166,7 +165,7 @@ window.addEventListener('load', () => {
       id: SHOPIFY.variants.ENERGY,
       node: document.getElementById('shopify-buy-mount'),
       options: {
-        product:{contents:{img:false,title:false,price:false},text:{button:'ADD TO CART'}},
+        product:{contents:{img:false,title:false,price:false},text:{button:'CHOOSE ENERGY.'}},
         cart:{text:{title:'CART',button:'CHECKOUT'}}
       }
     });
