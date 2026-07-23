@@ -35,6 +35,7 @@ section::before{content:"";position:absolute;top:-80px;left:0;right:0;height:160
 /* ── scroll reveal ── */
 .sr{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .sr.vis{opacity:1;transform:translateY(0)}
+.sr.fade-only{transform:none;transition:opacity 1.6s ease-out}
 .sr-d1{transition-delay:.12s}
 .sr-d2{transition-delay:.24s}
 .sr-d3{transition-delay:.36s}
@@ -62,13 +63,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 #hero{background:#bab7b0;min-height:100vh;padding:0;overflow:hidden}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* ── three states — concept only, states withheld ── */
-#states{background:linear-gradient(180deg,#d5d6d7,#ccced0)}
-#states::before{background:linear-gradient(180deg,var(--stone),#d5d6d7)}
+/* ── philosophy sequence — statement, states, one system ── */
+#philosophy{background:var(--stone)}
+#philosophy::before{background:linear-gradient(180deg,#bab7b0,var(--stone))}
+.phi-statement{font-weight:300;font-size:clamp(26px,3.4vw,38px);line-height:1.25;letter-spacing:0;max-width:600px}
+.phi-states{margin-top:clamp(80px,12vh,120px);display:flex;flex-direction:column;gap:clamp(70px,13vh,130px)}
+.phi-states span{display:block;font-weight:300;font-size:clamp(19px,2.2vw,26px);letter-spacing:.09em;color:var(--ink-soft)}
+.phi-onesystem{margin-top:clamp(140px,20vh,220px);font-weight:300;font-size:clamp(26px,3.4vw,38px);letter-spacing:.06em}
+
 h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-height:1.32}
-.sys-bridge{font-size:15px;font-style:italic;font-weight:300;color:var(--ink);opacity:.75;margin-top:40px}
-.sys-marks{display:flex;gap:16px;margin-top:40px}
-.sys-marks span{width:22px;height:1px;background:var(--ink);opacity:.25}
 
 /* ── object / energy state intro ── */
 #object{background:linear-gradient(120deg,#dcdddd,#d0d2d4);overflow:hidden}
@@ -117,10 +120,6 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .dec-notify.hide{display:none}
 .dec-notify-msg{display:none;margin-top:18px;font-size:10.5px;letter-spacing:.03em;color:var(--ink-soft)}
 .dec-notify-msg.show{display:block}
-
-/* ── manifest ── */
-#manifest{background:var(--stone)}
-#manifest::before{background:linear-gradient(180deg,#d0d1d2,var(--stone))}
 
 /* ── knowledge ── */
 #knowledge{background:var(--paper)}
@@ -190,22 +189,18 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   <img src="img/hero.jpg" alt="INTRINSE — Reveal what is within." class="hero-img">
 </section>
 
-<!-- PHILOSOPHY -->
-<section id="manifest" class="frame">
+<!-- PHILOSOPHY SEQUENCE — statement, states, one system -->
+<section id="philosophy">
   <div class="wrap">
-    <h2 class="sr sr-d1">Bewusste Entscheidungen bringen<br>das Beste zum Vorschein.</h2>
-    <div class="rule sr sr-d1"></div>
-  </div>
-</section>
+    <h2 class="phi-statement sr fade-only">Bewusste Entscheidungen bringen<br>das Beste zum Vorschein.</h2>
 
-<!-- THE SYSTEM -->
-<section id="states" class="frame">
-  <div class="wrap">
-    <h2 class="sr sr-d1">THREE STATES.<br>ONE PHYSIOLOGICAL SYSTEM.</h2>
-    <div class="rule sr sr-d1"></div>
-    <p class="sr sr-d2" style="font-size:14.5px;color:var(--ink-soft);line-height:1.9">Aktivierung.<br>Konzentration.<br>Regeneration.</p>
-    <p class="sys-bridge sr sr-d3">Jede Veränderung beginnt mit einem Zustand.</p>
-    <div class="sys-marks sr sr-d4"><span></span><span></span><span></span></div>
+    <div class="phi-states">
+      <span class="sr fade-only">ENERGY</span>
+      <span class="sr fade-only">FOCUS</span>
+      <span class="sr fade-only">BALANCE</span>
+    </div>
+
+    <div class="phi-onesystem sr fade-only">ONE SYSTEM.</div>
   </div>
 </section>
 
