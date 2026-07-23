@@ -167,7 +167,31 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
   #hero{min-height:auto;padding:88px 0 40px}
   .hero-img{position:static;width:100%;height:auto;object-fit:contain}
   .dec-grid{grid-template-columns:1fr;row-gap:64px}
-  .dec-atmosphere{flex-direction:column}
+
+  /* mobile fix 3 — cooler header, harmonized with hero instead of the old warm tone */
+  nav{background:rgba(217,218,219,.86)}
+
+  /* mobile fix 1 — plain radial gradient on the section itself, no blur/border-radius blob
+     (iOS Safari can show hard rectangular seams when clipping a blurred, irregularly-shaped element) */
+  .en-glow{left:0;right:0;top:0;bottom:0;width:auto;height:auto;max-width:none;max-height:none;
+    transform:none;border-radius:0;filter:none;
+    background:radial-gradient(ellipse 100% 65% at 35% 42%,rgba(199,104,72,.30) 0%,rgba(156,74,58,.20) 32%,rgba(156,74,58,.08) 56%,transparent 76%)}
+
+  /* mobile fix 1+2 — same technique for the stacked Choose Your State atmosphere,
+     with distinct color zones and a real (but soft) gap between Focus and Balance */
+  .dec-atmosphere{flex-direction:column;background:linear-gradient(180deg,
+      rgba(156,74,58,.32) 0%,
+      rgba(156,74,58,.10) 16%,
+      transparent 26%,
+      transparent 34%,
+      rgba(60,85,91,.28) 46%,
+      rgba(60,85,91,.08) 58%,
+      transparent 63%,
+      transparent 66%,
+      rgba(163,143,121,.30) 78%,
+      rgba(163,143,121,.12) 92%,
+      transparent 100%)}
+  .dec-beam::before{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
