@@ -66,6 +66,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,
 #shopify-status{font-size:11px;line-height:1.32;color:var(--ink-soft);margin-top:14px;min-height:16px;letter-spacing:.05em}
 .p-legal{font-size:10px;color:var(--ink-soft);opacity:.45;line-height:1.7;margin-top:60px;text-align:center;max-width:50ch;margin-left:auto;margin-right:auto}
 
+/* ── zutaten — table of contents, then detail entries ── */
+h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-height:1.32}
+#zutaten{background:var(--paper)}
+.ing-index{margin-top:clamp(40px,6vh,70px);display:flex;flex-direction:column;max-width:520px}
+.ing-link{display:block;padding:18px 2px;border-bottom:1px solid var(--hair);transition:border-color .4s ease}
+.ing-link:hover{border-color:var(--ink)}
+.ing-link span{position:relative;display:inline-block;font-size:15px;font-weight:300;letter-spacing:.02em;color:var(--ink-soft);transition:color .4s ease}
+.ing-link:hover span{color:var(--ink)}
+.ing-link span::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);opacity:0;transition:opacity .4s ease}
+.ing-link:hover span::after{opacity:.5}
+
+.ing-why{font-size:14.5px;color:var(--ink-soft);line-height:1.9;margin-top:26px;max-width:56ch}
+
+.ing-detail{margin-top:clamp(70px,10vh,110px);padding-top:clamp(70px,10vh,110px);border-top:1px solid var(--hair)}
+.ing-detail:first-of-type{margin-top:clamp(90px,13vh,140px)}
+.ing-h{font-size:16px;letter-spacing:.2em;font-weight:400;color:var(--ink)}
+.ing-detail h4{font-size:11px;letter-spacing:.28em;color:var(--ink);font-weight:400;margin:26px 0 10px}
+.ing-detail h4:first-of-type{margin-top:30px}
+.ing-detail p{font-size:13.8px;line-height:1.95;color:var(--ink-soft);max-width:66ch}
+
 footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;line-height:1.32;letter-spacing:.04em}
 .f-g{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
 .f-g a:hover{color:#fff}
@@ -115,6 +135,168 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
       <img class="sr sr-d2" src="img/canister-alt.png" alt="INTRINSE ENERGY Dose" style="filter:drop-shadow(0 16px 24px rgba(0,0,0,.1));max-width:400px;margin:0 auto">
     </div>
     <div class="p-legal">Nahrungsergänzungsmittel. Kein Ersatz für eine ausgewogene Ernährung und gesunde Lebensweise. Pflanzliches Proteinpulver (Erbse &amp; Reis) mit Guarana und L-Theanin. 475 g. Vegan.</div>
+  </div>
+</section>
+
+<!-- ZUTATEN -->
+<section id="zutaten">
+  <div class="wrap">
+    <h2 class="sr sr-d1">Zutaten</h2>
+    <div class="ing-index sr sr-d2" role="navigation" aria-label="Zutatenverzeichnis">
+      <a href="#ing-erbsenprotein" class="ing-link"><span>Erbsenprotein</span></a>
+      <a href="#ing-reisprotein" class="ing-link"><span>Reisprotein</span></a>
+      <a href="#ing-kakaopulver" class="ing-link"><span>Kakaopulver</span></a>
+      <a href="#ing-haferdrink" class="ing-link"><span>Haferdrink-Pulver</span></a>
+      <a href="#ing-ahornzucker" class="ing-link"><span>Ahornzucker</span></a>
+      <a href="#ing-leucin" class="ing-link"><span>L-Leucin</span></a>
+      <a href="#ing-guarana" class="ing-link"><span>Guarana-Extrakt</span></a>
+      <a href="#ing-kakaoextrakt" class="ing-link"><span>Kakao-Extrakt</span></a>
+      <a href="#ing-gruentee" class="ing-link"><span>Grüntee-Extrakt (L-Theanin)</span></a>
+      <a href="#ing-stevia" class="ing-link"><span>Stevia-Extrakt</span></a>
+    </div>
+
+    <h2 class="sr sr-d1" style="margin-top:clamp(90px,13vh,140px)">Warum diese Zutaten?</h2>
+    <p class="ing-why sr sr-d2">Jede Zutat erfüllt einen Zweck.<br>Deshalb wählen wir jede einzelne bewusst aus – und machen nachvollziehbar, warum sie Teil unserer Rezeptur ist.</p>
+
+    <div class="ing-detail" id="ing-erbsenprotein">
+      <div class="ing-h">Erbsenprotein</div>
+      <h4>Was ist das?</h4>
+      <p>Erbsenprotein ist ein pflanzliches Protein, das aus gelben Erbsen gewonnen wird. Es zählt zu den am häufigsten verwendeten pflanzlichen Proteinquellen.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Erbsenprotein liefert ein günstiges Aminosäureprofil, insbesondere einen hohen Anteil verzweigtkettiger Aminosäuren (BCAA) und Lysin – eine Aminosäure, die in vielen Getreideproteinen nur begrenzt vorkommt.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es bildet gemeinsam mit Reisprotein die Proteinbasis von ENERGY. Die Kombination beider Quellen gleicht die jeweiligen Aminosäurelücken aus.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Erbsenprotein gilt in Studien zur Muskelproteinsynthese als vergleichbar wirksam mit tierischen Proteinquellen, wenn die Gesamtproteinmenge ausreichend hoch ist. Die Studienlage zu pflanzlichen Proteinkombinationen wächst kontinuierlich.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden Erbsenprotein-Isolat mit hohem Reinheitsgrad und ohne unnötige Verarbeitungshilfsstoffe – nach denselben Kriterien, die wir an jede Zutat unserer Rezeptur anlegen.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-reisprotein">
+      <div class="ing-h">Reisprotein</div>
+      <h4>Was ist das?</h4>
+      <p>Reisprotein wird aus braunem Reis gewonnen und ist eine der milderen, geschmacksneutraleren pflanzlichen Proteinquellen.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Es ergänzt Erbsenprotein um schwefelhaltige Aminosäuren wie Methionin, die in Erbsenprotein nur begrenzt enthalten sind.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Gemeinsam mit Erbsenprotein entsteht ein vollständigeres Aminosäurespektrum, als es eine einzelne pflanzliche Quelle liefern könnte.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Untersuchungen zu Erbsen-Reis-Proteinkombinationen zeigen ein Aminosäureprofil, das dem von Molkenprotein in weiten Teilen nahekommt.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir setzen auf Reisprotein-Isolat mit möglichst neutralem Geschmack und ohne zusätzliche Aromastoffe.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-kakaopulver">
+      <div class="ing-h">Kakaopulver</div>
+      <h4>Was ist das?</h4>
+      <p>Kakaopulver entsteht durch Entölen und Vermahlen fermentierter Kakaobohnen.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Kakaopulver verleiht ENERGY seinen natürlichen Geschmack, ohne auf künstliche Aromen zurückzugreifen.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es ist eine geschmacksgebende Zutat und enthält von Natur aus Polyphenole sowie geringe Mengen Koffein und Theobromin.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Kakao-Polyphenole werden in der Forschung im Zusammenhang mit Gefäßfunktion und antioxidativer Kapazität untersucht. Die in einer Portion enthaltene Menge ist jedoch vergleichsweise gering.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden stark entöltes, naturbelassenes Kakaopulver ohne zugesetzten Zucker.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-haferdrink">
+      <div class="ing-h">Haferdrink-Pulver</div>
+      <h4>Was ist das?</h4>
+      <p>Haferdrink-Pulver ist ein aus Hafer gewonnenes, pulverisiertes Pflanzendrink-Konzentrat.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Es sorgt für eine cremige Konsistenz beim Anrühren und rundet den Geschmack ab, ohne Milchprodukte zu verwenden.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es fungiert als texturgebende Zutat und trägt zusätzlich geringe Mengen komplexer Kohlenhydrate und Ballaststoffe bei.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Hafer enthält Beta-Glucane, denen in der Forschung unter anderem eine Rolle für die Verdauung zugeschrieben wird. In der hier verwendeten Menge ist ihr Beitrag jedoch gering.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden ein glutenarmes Haferdrink-Pulver ohne zugesetzten Zucker.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-ahornzucker">
+      <div class="ing-h">Ahornzucker</div>
+      <h4>Was ist das?</h4>
+      <p>Ahornzucker wird durch Eindicken und Trocknen von Ahornsirup gewonnen, der aus dem Saft des Zuckerahorns stammt.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Wir nutzen ihn als natürliche Süßungskomponente, die den Geschmack abrundet, ohne raffinierten Haushaltszucker zu verwenden.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Er trägt zur Geschmacksbalance bei und wird bewusst sparsam dosiert.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Ahornzucker enthält geringe Mengen Mineralstoffe und Polyphenole, ist ernährungsphysiologisch jedoch in erster Linie eine Zuckerquelle und entsprechend maßvoll zu betrachten.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden reinen Ahornzucker ohne weitere Zusätze, in einer Menge, die den Gesamtzuckergehalt bewusst niedrig hält.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-leucin">
+      <div class="ing-h">L-Leucin</div>
+      <h4>Was ist das?</h4>
+      <p>L-Leucin ist eine essentielle, verzweigtkettige Aminosäure (BCAA).</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Leucin gilt als die Aminosäure mit der stärksten direkten Wirkung auf die Aktivierung der Muskelproteinsynthese.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es ergänzt das pflanzliche Aminosäureprofil gezielt dort, wo pflanzliche Proteinquellen im Vergleich zu tierischen Quellen etwas geringere Leucin-Anteile aufweisen.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Die Rolle von Leucin als Signalmolekül für die Muskelproteinsynthese ist wissenschaftlich vergleichsweise gut untersucht. Der tatsächliche Effekt hängt jedoch immer von der gesamten Proteinzufuhr und -qualität ab.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden fermentativ hergestelltes, veganes L-Leucin in pharmazeutischer Reinheit.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-guarana">
+      <div class="ing-h">Guarana-Extrakt</div>
+      <h4>Was ist das?</h4>
+      <p>Guarana-Extrakt wird aus den Samen der Guarana-Pflanze (Paullinia cupana) gewonnen und zählt zu den natürlichen Koffeinquellen.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Guarana liefert das Koffein für ENERGY – begleitet von weiteren natürlichen Pflanzenbestandteilen, die es von isoliertem Koffein unterscheiden.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es ist die zentrale aktivierende Zutat und namensgebend für den Charakter von ENERGY: gerichtete, ruhige Aktivierung statt kurzfristigem Reiz.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Koffein zählt zu den am besten untersuchten Wirkstoffen im Bereich Aufmerksamkeit und Leistungsfähigkeit. Die pflanzliche Matrix von Guarana wird mit einer gleichmäßigeren Freisetzung in Verbindung gebracht, auch wenn hierzu weniger Studien vorliegen als zu isoliertem Koffein.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden einen standardisierten Guarana-Extrakt mit definiertem Koffeingehalt, um eine gleichbleibende Dosierung sicherzustellen.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-kakaoextrakt">
+      <div class="ing-h">Kakao-Extrakt</div>
+      <h4>Was ist das?</h4>
+      <p>Kakao-Extrakt ist ein aus Kakaobohnen gewonnenes Konzentrat, das gegenüber Kakaopulver einen höheren, standardisierten Gehalt bestimmter Pflanzenstoffe aufweist.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Er ergänzt das Kakaopulver gezielt um konzentrierte Kakao-Polyphenole und Theobromin.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Theobromin gilt als milder, länger anhaltender Wachmacher und wird häufig als sanfte Ergänzung zu Koffein beschrieben.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Theobromin ist im Vergleich zu Koffein deutlich schwächer erforscht, gilt aber allgemein als milder und länger wirksam. Kakao-Polyphenole werden unter anderem im Zusammenhang mit Gefäßfunktion untersucht.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden einen standardisierten Kakao-Extrakt mit definiertem Theobromin-Gehalt.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-gruentee">
+      <div class="ing-h">Grüntee-Extrakt (L-Theanin)</div>
+      <h4>Was ist das?</h4>
+      <p>L-Theanin ist eine natürlich vorkommende Aminosäure, die insbesondere aus grünem Tee gewonnen wird.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>L-Theanin wird gezielt mit dem Koffein aus Guarana kombiniert, um dessen Wirkung zu begleiten.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es steht für die ruhige Seite von Calm activation – die Kombination aus Aktivierung und Klarheit, ohne Nervosität.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Die Kombination von Koffein und L-Theanin gehört zu den am häufigsten untersuchten Kombinationen im Bereich kognitiver Leistungsfähigkeit. Mehrere Studien deuten auf eine im Vergleich zu Koffein allein ausgeglichenere Wirkung hin.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden reines, standardisiertes L-Theanin aus fermentativer Herstellung.</p>
+    </div>
+
+    <div class="ing-detail" id="ing-stevia">
+      <div class="ing-h">Stevia-Extrakt</div>
+      <h4>Was ist das?</h4>
+      <p>Stevia-Extrakt wird aus den Blättern der Stevia-Pflanze (Stevia rebaudiana) gewonnen. Die enthaltenen Steviolglycoside sind für die Süßkraft verantwortlich.</p>
+      <h4>Warum verwenden wir es?</h4>
+      <p>Stevia ergänzt den Ahornzucker, um die gewünschte Süße mit einer sehr geringen Gesamtzuckermenge zu erreichen.</p>
+      <h4>Welche Funktion erfüllt es innerhalb der Rezeptur?</h4>
+      <p>Es ist eine kalorienfreie Süßungskomponente und wird bewusst sparsam eingesetzt, um den natürlichen Geschmack der übrigen Zutaten nicht zu überdecken.</p>
+      <h4>Was sagt die wissenschaftliche Evidenz?</h4>
+      <p>Steviolglycoside gelten als gut untersuchte, von der EFSA zugelassene Süßstoffe. Die Studienlage zu ihrer Unbedenklichkeit bei den zugelassenen Höchstmengen ist umfangreich.</p>
+      <h4>Warum haben wir genau diese Qualität gewählt?</h4>
+      <p>Wir verwenden einen hochreinen Stevia-Extrakt mit hohem Rebaudiosid-A-Anteil, der für ein milderes Geschmacksprofil bekannt ist.</p>
+    </div>
   </div>
 </section>
 
