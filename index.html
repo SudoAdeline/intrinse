@@ -40,6 +40,7 @@ section::before{content:"";position:absolute;top:-80px;left:0;right:0;height:160
 .sr-d2{transition-delay:.24s}
 .sr-d3{transition-delay:.36s}
 .sr-d4{transition-delay:.48s}
+.sr-d5{transition-delay:.6s}
 
 /* ── nav ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(201,198,192,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
@@ -144,6 +145,18 @@ h2{font-weight:200;font-size:clamp(21px,3.1vw,38px);letter-spacing:.18em;line-he
 .k-body-in ul{list-style:none;margin:8px 0 16px}
 .k-body-in li{padding-left:18px;position:relative;margin-bottom:6px}
 .k-body-in li::before{content:"—";position:absolute;left:0;opacity:.45}
+
+.qual-index{margin-top:8px;display:flex;flex-direction:column;max-width:420px}
+.qual-link{display:block;padding:14px 2px;border-bottom:1px solid var(--hair);transition:border-color .4s ease}
+.qual-link:hover{border-color:var(--ink)}
+.qual-link span{position:relative;display:inline-block;font-size:13.5px;font-weight:300;letter-spacing:.02em;color:var(--ink-soft);transition:color .4s ease}
+.qual-link:hover span{color:var(--ink)}
+.qual-link span::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--ink);opacity:0;transition:opacity .4s ease}
+.qual-link:hover span::after{opacity:.5}
+.qual-section{margin-top:34px;padding-top:28px;border-top:1px solid var(--hair)}
+.qual-section:first-of-type{margin-top:40px}
+.qual-section h4{margin-top:0}
+.qual-soon{font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft);opacity:.6;font-style:italic}
 
 /* ── closing ── */
 #reveal{background:linear-gradient(160deg,#d9dadb,#caccce);text-align:center}
@@ -409,6 +422,58 @@ footer{background:var(--ink);color:#b4b1ab;padding:64px 0 40px;font-size:11.5px;
           <p>GRUNDLAGEN erklärt die Basis. STATES beschreiben die natürlichen Zustände menschlicher Leistungsfähigkeit. INHALTSSTOFFE zeigen, wie Formulierungen entwickelt werden. WISSENSWELT verbindet alles miteinander.</p>
         </div></div>
       </div>
+
+      <div class="k-row sr sr-d5" tabindex="0">
+        <div class="k-num">05</div>
+        <div>
+          <div class="k-h">QUALITÄT</div><div class="k-line"></div>
+          <div class="k-p">Herkunft. Herstellung. Kontrolle. Nachweis.<br>Wie wir unseren Qualitätsanspruch nachvollziehbar machen.</div>
+        </div>
+        <div class="k-more">MEHR INFORMATIONEN <span>&rarr;</span></div>
+        <div class="k-body"><div class="k-body-in">
+          <p>Qualität entsteht nicht am Ende der Produktion.</p>
+          <p>Sie entsteht durch die Summe bewusster Entscheidungen – von der Auswahl der Rohstoffe bis zur fertigen Dose. Deshalb machen wir auch unseren Qualitätsanspruch nachvollziehbar.</p>
+
+          <div class="qual-index" role="navigation" aria-label="Qualitätsverzeichnis">
+            <a href="#qual-rohstoffauswahl" class="qual-link"><span>Rohstoffauswahl</span></a>
+            <a href="#qual-herstellung" class="qual-link"><span>Herstellung</span></a>
+            <a href="#qual-kontrolle" class="qual-link"><span>Qualitätskontrolle</span></a>
+            <a href="#qual-labor" class="qual-link"><span>Laboranalysen</span></a>
+            <a href="#qual-zertifizierungen" class="qual-link"><span>Zertifizierungen</span></a>
+          </div>
+
+          <div class="qual-section" id="qual-rohstoffauswahl">
+            <h4>Rohstoffauswahl</h4>
+            <p class="qual-soon">Inhalt folgt in Kürze.</p>
+          </div>
+
+          <div class="qual-section" id="qual-herstellung">
+            <h4>Herstellung</h4>
+            <p class="qual-soon">Inhalt folgt in Kürze.</p>
+          </div>
+
+          <div class="qual-section" id="qual-kontrolle">
+            <h4>Qualitätskontrolle</h4>
+            <p class="qual-soon">Inhalt folgt in Kürze.</p>
+          </div>
+
+          <div class="qual-section" id="qual-labor">
+            <h4>Laboranalysen</h4>
+            <p class="qual-soon">Inhalt folgt in Kürze.</p>
+          </div>
+
+          <div class="qual-section" id="qual-zertifizierungen">
+            <h4>Zertifizierungen</h4>
+            <p class="qual-soon">Inhalt folgt in Kürze.</p>
+            <ul>
+              <li>GMP</li>
+              <li>HACCP</li>
+              <li>Bio-Zertifizierung</li>
+              <li>Weitere Nachweise folgen</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -494,6 +559,7 @@ document.querySelectorAll('.k-row').forEach(r => {
   r.onclick = toggle;
   r.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } };
 });
+document.querySelectorAll('.qual-link').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
 
 /* ─── Notify me — FOCUS / BALANCE waitlist ─── */
 /* No mailing-list provider connected yet; wire this up (e.g. Klaviyo, Mailchimp) before launch. */
